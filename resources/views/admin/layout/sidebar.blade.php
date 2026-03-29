@@ -58,15 +58,7 @@
             @endisset
         </a>
 
-        <a href="{{ route('admin.books.create') }}"
-           class="sidebar-link {{ request()->routeIs('admin.books.create') ? 'active' : '' }}">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-            </svg>
-            Ajouter un livre
-        </a>
-
-        <a href=""
+        <a href="{{ route('admin.categories.index') }}"
            class="sidebar-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -75,7 +67,7 @@
             Catégories
         </a>
 
-        <a href=""
+        <a href="#"
            class="sidebar-link {{ request()->routeIs('admin.downloads.*') ? 'active' : '' }}">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -89,7 +81,7 @@
             Système
         </div>
 
-        <a href=""
+        <a href="#"
            class="sidebar-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -98,7 +90,7 @@
             Utilisateurs
         </a>
 
-        <a href=""
+        <a href="#"
            class="sidebar-link {{ request()->routeIs('admin.settings') ? 'active' : '' }}">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -124,7 +116,7 @@
                     {{ Auth::user()->email ?? 'admin@zerolib.fr' }}
                 </div>
             </div>
-            <form method="POST" action="" class="ml-auto flex-shrink-0">
+            <form method="POST" action="#" class="ml-auto flex-shrink-0">
                 @csrf
                 <button type="submit" class="text-white/30 hover:text-rust transition-colors" title="Déconnexion">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
