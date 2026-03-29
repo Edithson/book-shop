@@ -8,6 +8,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\SocialAuthController;
 
 // Route::view('/', 'welcome');
@@ -32,6 +33,7 @@ Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edi
 Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
 Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
 
+Route::get('/books/{book}/download', [DownloadController::class, 'download'])->name('books.download');
 
 Route::post('/webhook/notchpay', [WebhookController::class, 'handleNotchPay'])->name('webhook.notchpay');
 

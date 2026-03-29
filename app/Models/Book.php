@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Download;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
@@ -89,5 +90,11 @@ class Book extends Model
     public function getIsFreeAttribute(): bool
     {
         return $this->price === 0 || $this->price === null;
+    }
+
+    // méthode pour les téléchargements
+    public function downloads()
+    {
+        return $this->hasMany(Download::class);
     }
 }
