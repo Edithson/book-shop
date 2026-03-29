@@ -14,6 +14,9 @@ use App\Http\Controllers\SocialAuthController;
 // Route::view('/', 'welcome');
 
 Route::get('/', HomeController::class . '@index')->name('home');
+Route::get('/about', HomeController::class . '@about')->name('about');
+Route::get('/contact', HomeController::class . '@contact')->name('contact');
+
 Route::get('/admin', Dashboard::class . '@index')->name('admin.dashboard');
 
 // routes pour les livres

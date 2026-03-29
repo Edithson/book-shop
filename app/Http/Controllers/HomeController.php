@@ -58,4 +58,14 @@ class HomeController extends Controller
             'currentCat'   => $categorySlug,
         ]);
     }
+
+    public function about(): View
+    {
+        return view('custom.pages.about.about');
+    }
+
+    public function contact(): View
+    {
+        return view('custom.pages.contact.contact');
+    }
 }
