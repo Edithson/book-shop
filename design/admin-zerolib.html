@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zérolib — Administration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0e0c0a',
+            parchment: '#f5f0e8',
+            cream: '#faf7f2',
+            amber: '#c8883a',
+            amber2: '#e6a24e',
+            rust: '#9c3d2e',
+            sage: '#4a6741',
+            slate: '#2d3748',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #0e0c0a;
+      --parchment: #f5f0e8;
+      --cream: #faf7f2;
+      --amber: #c8883a;
+      --rust: #9c3d2e;
+      --sage: #4a6741;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+    }
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+    /* Sidebar */
+    .sidebar {
+      background: var(--ink);
+      width: 260px;
+      min-height: 100vh;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, width 0.3s ease;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: rgba(250,247,242,0.55);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .sidebar-link:hover {
+      background: rgba(200,136,58,0.12);
+      color: var(--amber);
+    }
+    .sidebar-link.active {
+      background: rgba(200,136,58,0.18);
+      color: var(--amber);
+      border-left: 2px solid var(--amber);
+    }
+    .sidebar-link.active .dot { background: var(--amber); }
+
+    /* Stat cards */
+    .stat-card {
+      background: white;
+      border: 1px solid rgba(200,136,58,0.15);
+      border-radius: 12px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .stat-card:hover {
+      box-shadow: 0 8px 32px rgba(14,12,10,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Table */
+    .data-table th {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(14,12,10,0.4);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(200,136,58,0.2);
+    }
+    .data-table td {
+      padding: 14px 16px;
+      font-size: 0.875rem;
+      border-bottom: 1px solid rgba(14,12,10,0.05);
+      vertical-align: middle;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(245,240,232,0.6); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: #c8b89a; border-radius: 3px; }
+
+    /* Inputs */
+    .field-input {
+      width: 100%;
+      background: var(--parchment);
+      border: 1px solid rgba(200,136,58,0.25);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field-input:focus {
+      outline: none;
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(200,136,58,0.12);
+    }
+    .field-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(14,12,10,0.45);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    /* Badge */
+    .badge { padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; }
+    .badge-free { background: rgba(74,103,65,0.12); color: var(--sage); }
+    .badge-premium { background: rgba(200,136,58,0.14); color: var(--amber); }
+    .badge-pending { background: rgba(156,61,46,0.12); color: var(--rust); }
+
+    /* Chart bars */
+    .chart-bar { transition: height 0.6s cubic-bezier(.22,.68,0,1.1); }
+
+    /* Overlay mobile */
+    .sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(14,12,10,0.5);
+      z-index: 39;
+    }
+    @media (max-width: 1024px) {
+      .sidebar { position: fixed; top: 0; left: 0; bottom: 0; z-index: 40; transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .sidebar-overlay.open { display: block; }
+    }
+
+    /* Toast */
+    .toast { animation: slideInT 0.4s ease, slideOutT 0.4s ease 2.8s forwards; }
+    @keyframes slideInT { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes slideOutT { from { opacity: 1; } to { opacity: 0; pointer-events: none; } }
+
+    /* Modal */
+    .modal-backdrop { backdrop-filter: blur(4px); }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.97) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .modal-box { animation: fadeIn 0.25s ease; }
+  </style>
+</head>
+<body x-data="admin()" x-init="init()" class="flex h-screen overflow-hidden">
+
+  <!-- SIDEBAR OVERLAY (mobile) -->
+  <div class="sidebar-overlay" :class="{ open: sidebarOpen }" @click="sidebarOpen = false"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar flex flex-col" :class="{ open: sidebarOpen }">
+    <!-- Logo -->
+    <div class="px-6 py-5 border-b border-white/8">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-amber rounded flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-ink" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <span class="font-serif font-black text-cream text-lg leading-none">Zéro<span class="text-amber">lib</span></span>
+          <div class="text-white/30 text-xs mt-0.5">Administration</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-0.5">
+      <div class="text-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-2 mb-1">Tableau de bord</div>
+      <div class="sidebar-link" :class="{ active: page === 'dashboard' }" @click="page='dashboard'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Vue d'ensemble
+      </div>
+
+      <div class="text-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-3 mb-1 mt-3">Bibliothèque</div>
+      <div class="sidebar-link" :class="{ active: page === 'books' }" @click="page='books'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        Livres
+        <span class="ml-auto bg-amber/20 text-amber text-xs px-2 py-0.5 rounded-full">12</span>
+      </div>
+      <div class="sidebar-link" :class="{ active: page === 'add' }" @click="page='add'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        Ajouter un livre
+      </div>
+      <div class="sidebar-link" :class="{ active: page === 'categories' }" @click="page='categories'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
+        Catégories
+      </div>
+      <div class="sidebar-link" :class="{ active: page === 'downloads' }" @click="page='downloads'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Téléchargements
+      </div>
+
+      <div class="text-white/20 text-xs font-semibold uppercase tracking-widest px-3 py-3 mb-1 mt-3">Système</div>
+      <div class="sidebar-link" :class="{ active: page === 'users' }" @click="page='users'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        Utilisateurs
+      </div>
+      <div class="sidebar-link" :class="{ active: page === 'settings' }" @click="page='settings'; sidebarOpen=false">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Paramètres
+      </div>
+    </nav>
+
+    <!-- Admin badge -->
+    <div class="px-4 py-4 border-t border-white/8">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-8 h-8 rounded-full bg-amber flex items-center justify-center text-ink font-bold text-sm flex-shrink-0">A</div>
+        <div class="min-w-0">
+          <div class="text-cream text-sm font-medium truncate">Administrateur</div>
+          <div class="text-white/30 text-xs truncate">admin@zerolib.fr</div>
+        </div>
+        <button class="ml-auto text-white/30 hover:text-rust transition-colors flex-shrink-0" title="Déconnexion">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+
+    <!-- TOP BAR -->
+    <header class="bg-cream/90 backdrop-blur-sm border-b border-amber/15 h-16 flex items-center px-4 sm:px-6 gap-4 flex-shrink-0">
+      <!-- Mobile menu toggle -->
+      <button class="lg:hidden p-2 rounded hover:bg-parchment transition-colors" @click="sidebarOpen = !sidebarOpen">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <!-- Page title -->
+      <div class="flex items-center gap-2 min-w-0">
+        <h1 class="font-serif font-bold text-lg truncate" x-text="pageTitle()"></h1>
+        <span class="text-ink/30 text-sm hidden sm:inline" x-show="page === 'dashboard'">— Mars 2026</span>
+      </div>
+
+      <!-- Search (desktop) -->
+      <div class="hidden sm:flex flex-1 max-w-xs ml-auto">
+        <div class="relative w-full">
+          <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-ink/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0"/></svg>
+          <input x-model="globalSearch" type="text" placeholder="Rechercher un livre..." class="field-input pl-9 py-2 text-sm" />
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2 ml-2">
+        <!-- Notifications -->
+        <button class="relative p-2 rounded-lg hover:bg-parchment transition-colors" @click="showNotifs = !showNotifs">
+          <svg class="w-5 h-5 text-ink/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-rust rounded-full"></span>
+        </button>
+        <!-- Add book shortcut -->
+        <button @click="page='add'" class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-ink text-cream text-sm rounded-lg hover:bg-amber transition-colors duration-200">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          Ajouter
+        </button>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+
+      <!-- ===== DASHBOARD ===== -->
+      <div x-show="page === 'dashboard'" class="space-y-6">
+
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <template x-for="stat in stats" :key="stat.label">
+            <div class="stat-card p-5">
+              <div class="flex items-start justify-between mb-3">
+                <div class="text-2xl" x-text="stat.icon"></div>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full"
+                  :class="stat.trend > 0 ? 'bg-sage/10 text-sage' : 'bg-rust/10 text-rust'"
+                  x-text="(stat.trend > 0 ? '+' : '') + stat.trend + '%'"></span>
+              </div>
+              <div class="font-serif font-bold text-2xl text-ink" x-text="stat.value"></div>
+              <div class="text-xs text-ink/40 mt-0.5" x-text="stat.label"></div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Chart + Recent activity -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+          <!-- Bar chart -->
+          <div class="lg:col-span-2 stat-card p-5">
+            <div class="flex items-center justify-between mb-5">
+              <h2 class="font-serif font-bold text-base">Téléchargements — 7 derniers jours</h2>
+              <span class="text-xs text-ink/40">Cette semaine</span>
+            </div>
+            <div class="flex items-end gap-2 h-36">
+              <template x-for="(bar, i) in chartData" :key="i">
+                <div class="flex-1 flex flex-col items-center gap-1">
+                  <div class="w-full rounded-t-md chart-bar"
+                    :style="`height: ${bar.pct}%; background: ${bar.active ? 'var(--amber)' : 'rgba(200,136,58,0.2)'}`"></div>
+                  <span class="text-xs text-ink/30" x-text="bar.day"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Top books -->
+          <div class="stat-card p-5">
+            <h2 class="font-serif font-bold text-base mb-4">Top livres</h2>
+            <div class="space-y-3">
+              <template x-for="(book, i) in topBooks" :key="i">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl flex-shrink-0" x-text="book.icon"></span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium truncate" x-text="book.title"></div>
+                    <div class="h-1.5 mt-1 rounded-full bg-parchment overflow-hidden">
+                      <div class="h-full rounded-full bg-amber chart-bar" :style="`width: ${book.pct}%`"></div>
+                    </div>
+                  </div>
+                  <span class="text-xs text-ink/40 flex-shrink-0" x-text="book.dl"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent downloads table -->
+        <div class="stat-card overflow-hidden">
+          <div class="flex items-center justify-between px-5 py-4 border-b border-amber/10">
+            <h2 class="font-serif font-bold text-base">Activité récente</h2>
+            <button @click="page='downloads'" class="text-xs text-amber hover:underline">Voir tout</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full data-table">
+              <thead><tr>
+                <th class="text-left">Livre</th>
+                <th class="text-left hidden sm:table-cell">Catégorie</th>
+                <th class="text-left hidden md:table-cell">Date</th>
+                <th class="text-left">Statut</th>
+                <th class="text-right">DL</th>
+              </tr></thead>
+              <tbody>
+                <template x-for="row in recentActivity" :key="row.id">
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-lg" x-text="row.icon"></span>
+                        <span class="font-medium text-sm" x-text="row.title"></span>
+                      </div>
+                    </td>
+                    <td class="hidden sm:table-cell"><span class="text-ink/50 text-xs" x-text="row.category"></span></td>
+                    <td class="hidden md:table-cell"><span class="text-ink/50 text-xs" x-text="row.date"></span></td>
+                    <td><span class="badge" :class="row.free ? 'badge-free' : 'badge-premium'" x-text="row.free ? 'Gratuit' : 'Premium'"></span></td>
+                    <td class="text-right font-semibold text-sm" x-text="row.dl"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BOOKS LIST ===== -->
+      <div x-show="page === 'books'" class="space-y-4">
+        <!-- Toolbar -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-1">
+            <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-ink/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0"/></svg>
+            <input x-model="bookSearch" type="text" placeholder="Filtrer les livres..." class="field-input pl-9" />
+          </div>
+          <select x-model="bookCatFilter" class="field-input sm:w-44">
+            <option value="">Toutes catégories</option>
+            <template x-for="cat in categories" :key="cat"><option :value="cat" x-text="cat"></option></template>
+          </select>
+          <button @click="page='add'" class="flex items-center justify-center gap-2 px-4 py-2 bg-ink text-cream text-sm rounded-lg hover:bg-amber transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Nouveau livre
+          </button>
+        </div>
+
+        <!-- Table -->
+        <div class="stat-card overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full data-table">
+              <thead><tr>
+                <th class="text-left">Livre</th>
+                <th class="text-left hidden sm:table-cell">Auteur</th>
+                <th class="text-left hidden lg:table-cell">Pages</th>
+                <th class="text-left hidden md:table-cell">Catégorie</th>
+                <th class="text-left">Statut</th>
+                <th class="text-right">Actions</th>
+              </tr></thead>
+              <tbody>
+                <template x-for="book in filteredBooks" :key="book.id">
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0" :style="`background: ${book.color}`">
+                          <span x-text="book.icon"></span>
+                        </div>
+                        <span class="font-medium text-sm" x-text="book.title"></span>
+                      </div>
+                    </td>
+                    <td class="hidden sm:table-cell"><span class="text-ink/60 text-sm" x-text="book.author"></span></td>
+                    <td class="hidden lg:table-cell"><span class="text-ink/60 text-sm" x-text="book.pages + ' p.'"></span></td>
+                    <td class="hidden md:table-cell"><span class="badge badge-free" x-text="book.category"></span></td>
+                    <td><span class="badge badge-free">Publié</span></td>
+                    <td class="text-right">
+                      <div class="flex items-center justify-end gap-1">
+                        <button @click="editBook(book)" class="p-1.5 rounded hover:bg-parchment transition-colors text-ink/50 hover:text-amber" title="Modifier">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </button>
+                        <button @click="confirmDelete(book)" class="p-1.5 rounded hover:bg-rust/10 transition-colors text-ink/50 hover:text-rust" title="Supprimer">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="px-5 py-4 border-t border-amber/10 flex items-center justify-between">
+            <span class="text-xs text-ink/40" x-text="`${filteredBooks.length} livre(s)`"></span>
+            <div class="flex gap-1">
+              <button class="px-3 py-1 text-xs rounded border border-amber/20 hover:bg-parchment transition-colors">‹ Préc.</button>
+              <button class="px-3 py-1 text-xs rounded bg-ink text-cream">1</button>
+              <button class="px-3 py-1 text-xs rounded border border-amber/20 hover:bg-parchment transition-colors">Suiv. ›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ADD / EDIT BOOK ===== -->
+      <div x-show="page === 'add'" class="max-w-2xl space-y-6">
+        <div class="stat-card p-6 sm:p-8">
+          <h2 class="font-serif font-bold text-xl mb-6" x-text="editMode ? 'Modifier le livre' : 'Ajouter un nouveau livre'"></h2>
+          <div class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Titre du livre *</label>
+                <input x-model="form.title" type="text" placeholder="ex: Apprendre le C" class="field-input" />
+              </div>
+              <div>
+                <label class="field-label">Auteur *</label>
+                <input x-model="form.author" type="text" placeholder="ex: Mathieu Nebra" class="field-input" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Catégorie *</label>
+                <select x-model="form.category" class="field-input">
+                  <option value="">Sélectionner…</option>
+                  <template x-for="cat in categories" :key="cat"><option :value="cat" x-text="cat"></option></template>
+                </select>
+              </div>
+              <div>
+                <label class="field-label">Année de publication</label>
+                <input x-model="form.year" type="number" placeholder="ex: 2008" class="field-input" min="2000" max="2030" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Nombre de pages</label>
+                <input x-model="form.pages" type="number" placeholder="ex: 312" class="field-input" />
+              </div>
+              <div>
+                <label class="field-label">Emoji icône</label>
+                <input x-model="form.icon" type="text" placeholder="ex: ⚙️" class="field-input" />
+              </div>
+            </div>
+            <div>
+              <label class="field-label">Description</label>
+              <textarea x-model="form.description" rows="4" placeholder="Résumé du livre…" class="field-input resize-none"></textarea>
+            </div>
+
+            <!-- File upload area -->
+            <div>
+              <label class="field-label">Fichier PDF</label>
+              <div class="border-2 border-dashed border-amber/30 rounded-xl p-6 text-center hover:border-amber/60 hover:bg-parchment/50 transition-all cursor-pointer">
+                <div class="text-3xl mb-2">📄</div>
+                <p class="text-sm text-ink/50">Glissez le PDF ici ou <span class="text-amber font-medium">parcourir</span></p>
+                <p class="text-xs text-ink/30 mt-1">PDF uniquement — Max 50 Mo</p>
+              </div>
+            </div>
+
+            <!-- Statut -->
+            <div class="flex items-center gap-3 pt-2">
+              <label class="field-label mb-0">Accès gratuit</label>
+              <button @click="form.free = !form.free"
+                class="w-11 h-6 rounded-full transition-colors duration-200 flex items-center px-0.5"
+                :class="form.free ? 'bg-sage' : 'bg-ink/20'">
+                <span class="w-5 h-5 bg-white rounded-full shadow transition-transform duration-200" :class="form.free ? 'translate-x-5' : 'translate-x-0'"></span>
+              </button>
+              <span class="text-sm text-ink/50" x-text="form.free ? 'Gratuit' : 'Premium'"></span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-3 pt-2">
+              <button @click="submitForm()" class="flex-1 py-3 bg-ink text-cream font-semibold rounded-lg hover:bg-amber transition-colors duration-200 text-sm">
+                <span x-text="editMode ? 'Enregistrer les modifications' : 'Publier le livre'"></span>
+              </button>
+              <button @click="resetForm(); page='books'" class="px-5 py-3 border border-amber/30 rounded-lg text-sm hover:bg-parchment transition-colors">
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CATEGORIES ===== -->
+      <div x-show="page === 'categories'" class="space-y-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <template x-for="cat in catStats" :key="cat.name">
+            <div class="stat-card p-5 cursor-pointer" @click="bookCatFilter = cat.name; page='books'">
+              <div class="text-2xl mb-3" x-text="cat.icon"></div>
+              <div class="font-serif font-bold text-base" x-text="cat.name"></div>
+              <div class="text-ink/40 text-xs mt-1" x-text="cat.count + ' livre(s)'"></div>
+              <div class="mt-3 h-1 bg-parchment rounded-full overflow-hidden">
+                <div class="h-full bg-amber rounded-full" :style="`width: ${cat.pct}%`"></div>
+              </div>
+            </div>
+          </template>
+          <!-- Add category -->
+          <div class="stat-card p-5 border-dashed border-amber/30 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-parchment/60 transition-colors" style="border-style: dashed;">
+            <div class="w-10 h-10 rounded-full border-2 border-dashed border-amber/40 flex items-center justify-center text-amber text-xl">+</div>
+            <span class="text-sm text-ink/40">Nouvelle catégorie</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== DOWNLOADS ===== -->
+      <div x-show="page === 'downloads'" class="space-y-4">
+        <div class="stat-card overflow-hidden">
+          <div class="px-5 py-4 border-b border-amber/10 flex items-center justify-between">
+            <h2 class="font-serif font-bold text-base">Historique des téléchargements</h2>
+            <button class="text-xs flex items-center gap-1 px-3 py-1.5 rounded border border-amber/20 hover:bg-parchment transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Exporter CSV
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full data-table">
+              <thead><tr>
+                <th class="text-left">#</th>
+                <th class="text-left">Livre</th>
+                <th class="text-left hidden sm:table-cell">Catégorie</th>
+                <th class="text-left hidden md:table-cell">Date</th>
+                <th class="text-right">Total DL</th>
+              </tr></thead>
+              <tbody>
+                <template x-for="(book, i) in books" :key="book.id">
+                  <tr>
+                    <td class="text-ink/30 text-sm" x-text="i + 1"></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span x-text="book.icon"></span>
+                        <span class="font-medium text-sm" x-text="book.title"></span>
+                      </div>
+                    </td>
+                    <td class="hidden sm:table-cell"><span class="text-xs text-ink/50" x-text="book.category"></span></td>
+                    <td class="hidden md:table-cell"><span class="text-xs text-ink/50" x-text="book.year"></span></td>
+                    <td class="text-right font-bold text-sm" x-text="Math.floor(Math.random() * 900 + 100)"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== USERS ===== -->
+      <div x-show="page === 'users'" class="space-y-4">
+        <div class="stat-card overflow-hidden">
+          <div class="px-5 py-4 border-b border-amber/10">
+            <h2 class="font-serif font-bold text-base">Utilisateurs enregistrés</h2>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full data-table">
+              <thead><tr>
+                <th class="text-left">Utilisateur</th>
+                <th class="text-left hidden sm:table-cell">Rôle</th>
+                <th class="text-left hidden md:table-cell">Inscription</th>
+                <th class="text-right">Actions</th>
+              </tr></thead>
+              <tbody>
+                <template x-for="u in users" :key="u.id">
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-parchment flex items-center justify-center font-bold text-sm text-amber flex-shrink-0" x-text="u.name[0]"></div>
+                        <div>
+                          <div class="font-medium text-sm" x-text="u.name"></div>
+                          <div class="text-xs text-ink/40" x-text="u.email"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="hidden sm:table-cell"><span class="badge" :class="u.role === 'Admin' ? 'badge-premium' : 'badge-free'" x-text="u.role"></span></td>
+                    <td class="hidden md:table-cell"><span class="text-xs text-ink/50" x-text="u.joined"></span></td>
+                    <td class="text-right"><button class="p-1.5 rounded hover:bg-parchment text-ink/40 hover:text-rust transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg></button></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SETTINGS ===== -->
+      <div x-show="page === 'settings'" class="max-w-2xl space-y-4">
+        <div class="stat-card p-6 sm:p-8 space-y-5">
+          <h2 class="font-serif font-bold text-xl">Paramètres du site</h2>
+          <div>
+            <label class="field-label">Nom du site</label>
+            <input type="text" value="Zérolib" class="field-input" />
+          </div>
+          <div>
+            <label class="field-label">Description</label>
+            <textarea rows="2" class="field-input resize-none">Une archive libre dédiée aux anciens livres du Site du Zéro.</textarea>
+          </div>
+          <div>
+            <label class="field-label">Email de contact</label>
+            <input type="email" value="contact@zerolib.fr" class="field-input" />
+          </div>
+          <div class="flex items-center gap-3 pt-1">
+            <label class="field-label mb-0">Mode maintenance</label>
+            <button @click="maintenance = !maintenance"
+              class="w-11 h-6 rounded-full transition-colors duration-200 flex items-center px-0.5"
+              :class="maintenance ? 'bg-rust' : 'bg-ink/20'">
+              <span class="w-5 h-5 bg-white rounded-full shadow transition-transform duration-200" :class="maintenance ? 'translate-x-5' : 'translate-x-0'"></span>
+            </button>
+            <span class="text-sm text-ink/50" x-text="maintenance ? 'Activé' : 'Désactivé'"></span>
+          </div>
+          <button @click="showToast('Paramètres enregistrés !')" class="px-6 py-2.5 bg-ink text-cream text-sm rounded-lg hover:bg-amber transition-colors">
+            Enregistrer
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- DELETE CONFIRM MODAL -->
+  <div x-show="deleteTarget" class="modal-backdrop fixed inset-0 z-50 bg-ink/50 flex items-center justify-center p-4" @click.self="deleteTarget = null">
+    <div class="modal-box bg-cream rounded-2xl shadow-2xl p-6 max-w-sm w-full">
+      <div class="text-3xl mb-3">🗑️</div>
+      <h3 class="font-serif font-bold text-lg mb-2">Supprimer ce livre ?</h3>
+      <p class="text-sm text-ink/60 mb-5" x-text="`« ${deleteTarget?.title} » sera supprimé définitivement.`"></p>
+      <div class="flex gap-3">
+        <button @click="deleteBook()" class="flex-1 py-2.5 bg-rust text-cream text-sm rounded-lg hover:bg-rust/80 transition-colors">Supprimer</button>
+        <button @click="deleteTarget = null" class="flex-1 py-2.5 border border-amber/30 text-sm rounded-lg hover:bg-parchment transition-colors">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div x-show="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-ink text-cream px-6 py-3 rounded-full text-sm font-medium shadow-xl flex items-center gap-2">
+    <svg class="w-4 h-4 text-sage flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+    <span x-text="toastMsg"></span>
+  </div>
+
+  <script>
+    function admin() {
+      return {
+        page: 'dashboard',
+        sidebarOpen: false,
+        globalSearch: '',
+        bookSearch: '',
+        bookCatFilter: '',
+        toast: false,
+        toastMsg: '',
+        deleteTarget: null,
+        editMode: false,
+        maintenance: false,
+
+        form: { title: '', author: '', category: '', year: '', pages: '', icon: '', description: '', free: true },
+
+        categories: ['Programmation', 'Web', 'Réseau', 'Linux', 'Mathématiques', 'Jeux', 'Bureautique'],
+
+        stats: [
+          { label: 'Livres publiés', value: '12', trend: 0, icon: '📚' },
+          { label: 'Téléchargements', value: '4 832', trend: 12, icon: '⬇️' },
+          { label: 'Utilisateurs', value: '1 204', trend: 8, icon: '👥' },
+          { label: 'Catégories', value: '8', trend: 0, icon: '🏷️' },
+        ],
+
+        chartData: [
+          { day: 'Lun', pct: 55, active: false },
+          { day: 'Mar', pct: 70, active: false },
+          { day: 'Mer', pct: 45, active: false },
+          { day: 'Jeu', pct: 80, active: false },
+          { day: 'Ven', pct: 95, active: false },
+          { day: 'Sam', pct: 60, active: false },
+          { day: 'Dim', pct: 72, active: true },
+        ],
+
+        topBooks: [
+          { title: 'Apprendre le C', icon: '⚙️', dl: '842', pct: 100 },
+          { title: 'PHP & MySQL', icon: '🌐', dl: '710', pct: 84 },
+          { title: 'HTML & CSS', icon: '🎨', dl: '698', pct: 82 },
+          { title: 'Python 3', icon: '🐍', dl: '601', pct: 71 },
+          { title: 'Linux — Manuel', icon: '🐧', dl: '540', pct: 64 },
+        ],
+
+        recentActivity: [
+          { id:1, title:'Apprendre le C', icon:'⚙️', category:'Programmation', date:'29 mars 2026', free:true, dl:'842' },
+          { id:2, title:'PHP & MySQL', icon:'🌐', category:'Web', date:'28 mars 2026', free:true, dl:'710' },
+          { id:3, title:'HTML & CSS', icon:'🎨', category:'Web', date:'28 mars 2026', free:true, dl:'698' },
+          { id:4, title:'Python 3', icon:'🐍', category:'Programmation', date:'27 mars 2026', free:true, dl:'601' },
+          { id:5, title:'Linux — Manuel', icon:'🐧', category:'Linux', date:'27 mars 2026', free:true, dl:'540' },
+        ],
+
+        books: [
+          { id:1, title:"Apprendre le C", author:"Mathieu Nebra", category:"Programmation", pages:312, year:2007, free:true, icon:"⚙️", color:"linear-gradient(135deg,#1a1a2e,#16213e)" },
+          { id:2, title:"Le JavaScript moderne", author:"Zozor & Communauté", category:"Web", pages:280, year:2009, free:true, icon:"✨", color:"linear-gradient(135deg,#b8860b,#8b6914)" },
+          { id:3, title:"PHP & MySQL", author:"Mathieu Nebra", category:"Web", pages:420, year:2008, free:true, icon:"🌐", color:"linear-gradient(135deg,#4a148c,#311b92)" },
+          { id:4, title:"Linux — Le manuel", author:"Communauté SDZ", category:"Linux", pages:350, year:2010, free:true, icon:"🐧", color:"linear-gradient(135deg,#1b5e20,#2e7d32)" },
+          { id:5, title:"Algorithmique", author:"Esdeath", category:"Mathématiques", pages:220, year:2011, free:true, icon:"🧮", color:"linear-gradient(135deg,#880e4f,#c2185b)" },
+          { id:6, title:"Les réseaux", author:"Taguan", category:"Réseau", pages:390, year:2009, free:true, icon:"🌍", color:"linear-gradient(135deg,#0d47a1,#1565c0)" },
+          { id:7, title:"Créer un jeu vidéo", author:"Guppy & Lucas", category:"Jeux", pages:260, year:2012, free:true, icon:"🎮", color:"linear-gradient(135deg,#4e342e,#6d4c41)" },
+          { id:8, title:"Excel pour tous", author:"Maljuna Kodo", category:"Bureautique", pages:180, year:2010, free:true, icon:"📊", color:"linear-gradient(135deg,#006064,#00838f)" },
+          { id:9, title:"Python 3 — Débutant", author:"Aldian & Pierre", category:"Programmation", pages:298, year:2013, free:true, icon:"🐍", color:"linear-gradient(135deg,#33691e,#558b2f)" },
+          { id:10, title:"HTML & CSS", author:"Matthieu Desq", category:"Web", pages:310, year:2007, free:true, icon:"🎨", color:"linear-gradient(135deg,#bf360c,#e64a19)" },
+          { id:11, title:"Java orienté objet", author:"Crois & Michel", category:"Programmation", pages:376, year:2011, free:true, icon:"☕", color:"linear-gradient(135deg,#212121,#424242)" },
+          { id:12, title:"SQL — Bases de données", author:"Winjerome", category:"Programmation", pages:240, year:2009, free:true, icon:"🗄️", color:"linear-gradient(135deg,#01579b,#0277bd)" },
+        ],
+
+        catStats: [
+          { name:'Programmation', icon:'⚙️', count:4, pct:100 },
+          { name:'Web', icon:'🌐', count:3, pct:75 },
+          { name:'Réseau', icon:'🌍', count:1, pct:25 },
+          { name:'Linux', icon:'🐧', count:1, pct:25 },
+          { name:'Mathématiques', icon:'🧮', count:1, pct:25 },
+          { name:'Jeux', icon:'🎮', count:1, pct:25 },
+          { name:'Bureautique', icon:'📊', count:1, pct:25 },
+        ],
+
+        users: [
+          { id:1, name:'Mathieu Nebra', email:'m.nebra@zerolib.fr', role:'Admin', joined:'Jan 2026' },
+          { id:2, name:'Zozor', email:'zozor@community.fr', role:'Contributeur', joined:'Fév 2026' },
+          { id:3, name:'Taguan', email:'taguan@forum.fr', role:'Lecteur', joined:'Mar 2026' },
+          { id:4, name:'Alice Martin', email:'alice@mail.fr', role:'Lecteur', joined:'Mar 2026' },
+        ],
+
+        get filteredBooks() {
+          return this.books.filter(b => {
+            const q = this.bookSearch.toLowerCase();
+            const matchSearch = !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q);
+            const matchCat = !this.bookCatFilter || b.category === this.bookCatFilter;
+            return matchSearch && matchCat;
+          });
+        },
+
+        pageTitle() {
+          const titles = { dashboard: 'Vue d\'ensemble', books: 'Gestion des livres', add: this.editMode ? 'Modifier un livre' : 'Ajouter un livre', categories: 'Catégories', downloads: 'Téléchargements', users: 'Utilisateurs', settings: 'Paramètres' };
+          return titles[this.page] || '';
+        },
+
+        editBook(book) {
+          this.form = { ...book };
+          this.editMode = true;
+          this.page = 'add';
+        },
+
+        confirmDelete(book) { this.deleteTarget = book; },
+
+        deleteBook() {
+          this.books = this.books.filter(b => b.id !== this.deleteTarget.id);
+          this.showToast(`« ${this.deleteTarget.title} » supprimé.`);
+          this.deleteTarget = null;
+        },
+
+        submitForm() {
+          if (!this.form.title || !this.form.author) { this.showToast('Veuillez remplir les champs obligatoires.'); return; }
+          if (this.editMode) {
+            const idx = this.books.findIndex(b => b.id === this.form.id);
+            if (idx !== -1) this.books[idx] = { ...this.form };
+            this.showToast('Livre modifié avec succès !');
+          } else {
+            this.books.unshift({ ...this.form, id: Date.now(), color: 'linear-gradient(135deg,#1a1a2e,#16213e)' });
+            this.showToast('Livre publié avec succès !');
+          }
+          this.resetForm();
+          this.page = 'books';
+        },
+
+        resetForm() {
+          this.form = { title:'', author:'', category:'', year:'', pages:'', icon:'', description:'', free:true };
+          this.editMode = false;
+        },
+
+        showToast(msg) {
+          this.toastMsg = msg;
+          this.toast = true;
+          setTimeout(() => { this.toast = false; }, 3200);
+        },
+
+        init() {}
+      };
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zérolib — La Bibliothèque Libre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --accent: #FF3CAC;
+      --accent2: #784BA0;
+      --accent3: #2B86C5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(135deg, #0D0015 0%, #1A0030 50%, #0D0015 100%);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9998; opacity: 0.45;
+    }
+
+    .orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(90px); pointer-events: none; z-index: 0;
+      animation: orbFloat 10s ease-in-out infinite;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(13,0,21,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,60,172,0.15);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem; letter-spacing: 0.05em;
+      color: #fff; text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      position: relative; transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-btn {
+      padding: 0.55rem 1.5rem;
+      border: 2px solid var(--accent); border-radius: 50px;
+      color: var(--accent);
+      font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      cursor: pointer; background: transparent; transition: all 0.3s;
+    }
+    .nav-btn:hover { background: var(--accent); color: #fff; }
+
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .burger span { width: 24px; height: 2px; background: #fff; transition: all 0.3s; display: block; }
+
+    /* MOBILE NAV */
+    .mobile-nav {
+      position: fixed; top: 0; right: -100%; width: 75%; height: 100vh;
+      background: rgba(13,0,21,0.97); backdrop-filter: blur(20px);
+      z-index: 200; transition: right 0.4s ease;
+      display: flex; flex-direction: column; padding: 5rem 2rem 2rem;
+      border-left: 1px solid rgba(255,60,172,0.2);
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .nav-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      z-index: 199; display: none;
+    }
+    .nav-overlay.open { display: block; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 2.5rem 4rem;
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,60,172,0.1);
+      border: 1px solid rgba(255,60,172,0.3);
+      padding: 0.45rem 1.1rem; border-radius: 50px;
+      font-family: 'Syne', sans-serif; font-size: 0.7rem;
+      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.75rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4.5rem, 13vw, 11rem);
+      line-height: 0.9; letter-spacing: 0.02em;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .hero-title .outline {
+      -webkit-text-stroke: 2px var(--accent);
+      color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.75;
+      color: rgba(255,255,255,0.5);
+      max-width: 500px; margin-top: 1.75rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-cta {
+      display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .btn-primary {
+      padding: 1rem 2.5rem; background: var(--accent);
+      border-radius: 50px; border: none;
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #fff; cursor: pointer; transition: all 0.3s;
+      box-shadow: 0 0 35px rgba(255,60,172,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 55px rgba(255,60,172,0.6); }
+    .btn-ghost {
+      padding: 1rem 2.5rem;
+      border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50px;
+      background: transparent;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.3s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+
+    .hero-float {
+      position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
+      font-size: clamp(7rem, 17vw, 15rem);
+      animation: heroFloat 5s ease-in-out infinite;
+      filter: drop-shadow(0 0 80px rgba(255,60,172,0.25));
+      user-select: none; z-index: 0; opacity: 0.9;
+    }
+    .hero-stats {
+      display: flex; gap: 3rem; margin-top: 4rem; flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem; color: var(--accent); line-height: 1;
+    }
+    .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+
+    /* SECTIONS */
+    .section { padding: 6rem 2.5rem; position: relative; z-index: 1; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      font-family: 'Syne', sans-serif; font-size: 0.7rem;
+      font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 3rem;
+    }
+    .section-title span { color: var(--accent); }
+
+    /* CATEGORY CARDS */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+    .cat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px; padding: 1.75rem 1.25rem;
+      text-align: center; cursor: pointer; transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .cat-card:hover, .cat-card.active {
+      border-color: rgba(255,60,172,0.5);
+      background: rgba(255,60,172,0.08);
+      transform: translateY(-4px);
+    }
+    .cat-icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
+    .cat-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.85rem; }
+    .cat-count { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+
+    /* SEARCH */
+    .search-bar { display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .search-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px; padding: 1rem 1.5rem 1rem 3rem;
+      color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    .search-input::placeholder { color: rgba(255,255,255,0.25); }
+    .search-input:focus { border-color: var(--accent); }
+    .search-ico { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.25); }
+    .sort-sel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px; padding: 1rem 1.5rem;
+      color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      outline: none; cursor: pointer;
+    }
+    .sort-sel option { background: #1a0030; }
+
+    /* FILTER PILLS */
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .fpill {
+      padding: 0.4rem 1rem; border-radius: 50px;
+      font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4);
+      cursor: pointer; transition: all 0.2s; background: transparent;
+    }
+    .fpill:hover, .fpill.active { border-color: var(--accent); color: var(--accent); background: rgba(255,60,172,0.1); }
+
+    /* RESULT HDR */
+    .result-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    .result-count { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; }
+    .result-count span { color: var(--accent); }
+    .view-toggle {
+      display: flex; gap: 0.35rem;
+      background: rgba(255,255,255,0.05); border-radius: 8px; padding: 0.3rem;
+    }
+    .vbtn {
+      padding: 0.4rem 0.65rem; border-radius: 6px; border: none;
+      background: transparent; color: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.2s;
+    }
+    .vbtn.active { background: var(--accent); color: #fff; }
+
+    /* BOOK CARDS */
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+    .book-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; overflow: hidden; cursor: pointer;
+      transition: all 0.35s cubic-bezier(.22,.68,0,1.2);
+    }
+    .book-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(255,60,172,0.4);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 30px rgba(255,60,172,0.1);
+    }
+    .book-cover {
+      height: 190px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .book-cover::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.45));
+    }
+    .book-emoji { font-size: 4.5rem; position: relative; z-index: 1; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5)); }
+    .book-badge {
+      position: absolute; top: 1rem; right: 1rem; z-index: 2;
+      padding: 0.3rem 0.8rem; border-radius: 50px;
+      font-family: 'Syne', sans-serif; font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
+    }
+    .badge-free { background: linear-gradient(135deg, #1db954, #0f7a36); }
+    .badge-prem { background: linear-gradient(135deg, #ff3cac, #7b2ff7); }
+    .book-body { padding: 1.2rem; }
+    .book-cat { font-family: 'Syne', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
+    .book-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 800; line-height: 1.3; margin-bottom: 0.25rem; }
+    .book-author { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .book-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; }
+    .book-pages { font-size: 0.7rem; color: rgba(255,255,255,0.2); }
+    .dl-btn {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.1rem;
+      background: var(--accent); border: none; border-radius: 50px;
+      font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.04em; color: #fff;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .dl-btn:hover { transform: scale(1.06); box-shadow: 0 0 20px rgba(255,60,172,0.5); }
+
+    /* LIST VIEW */
+    .books-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .book-list {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 1.2rem;
+      display: flex; gap: 1.2rem; align-items: center; cursor: pointer; transition: all 0.3s;
+    }
+    .book-list:hover { border-color: rgba(255,60,172,0.3); background: rgba(255,60,172,0.05); transform: translateX(4px); }
+    .book-list-ico {
+      width: 60px; height: 76px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; flex-shrink: 0;
+    }
+    .book-list-desc { font-size: 0.78rem; color: rgba(255,255,255,0.3); display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin-top: 0.3rem; }
+
+    /* BANNER */
+    .banner {
+      margin: 0 2.5rem 6rem; border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,60,172,0.14), rgba(123,47,247,0.14));
+      border: 1px solid rgba(255,60,172,0.22);
+      padding: 4rem 3rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+      position: relative; overflow: hidden; z-index: 1;
+    }
+    .banner::before {
+      content: '◆'; font-size: 18rem; position: absolute;
+      right: -1rem; top: -4rem; color: rgba(255,60,172,0.04); pointer-events: none;
+    }
+    .banner-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; }
+    .banner-title em { color: var(--accent); font-style: italic; }
+    .banner-sub { color: rgba(255,255,255,0.45); font-size: 0.9rem; max-width: 400px; margin-top: 0.7rem; }
+
+    /* FOOTER */
+    footer { background: rgba(0,0,0,0.45); border-top: 1px solid rgba(255,255,255,0.06); padding: 4rem 2.5rem 2rem; position: relative; z-index: 1; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.7rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-desc { font-size: 0.82rem; color: rgba(255,255,255,0.3); line-height: 1.75; max-width: 290px; }
+    .footer-h { font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 1rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-btm { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.18); }
+
+    /* MODAL */
+    .modal-wrap {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(7px); z-index: 500;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    @media (min-width: 640px) { .modal-wrap { align-items: center; padding: 1rem; } }
+    .modal-box {
+      background: linear-gradient(135deg, #1e0035, #0e001e);
+      border: 1px solid rgba(255,60,172,0.2);
+      border-radius: 24px 24px 0 0; width: 100%; max-width: 520px; overflow: hidden;
+    }
+    @media (min-width: 640px) { .modal-box { border-radius: 24px; } }
+    .modal-cover { height: 150px; display: flex; align-items: center; padding: 1.5rem; position: relative; }
+    .modal-emo { font-size: 3.8rem; margin-right: 1.25rem; }
+    .modal-cat2 { font-family: 'Syne', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .modal-ttl { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; line-height: 1.25; }
+    .modal-x {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: none;
+      color: #fff; cursor: pointer; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+    }
+    .modal-x:hover { background: rgba(255,60,172,0.4); }
+    .modal-body { padding: 1.5rem; }
+    .modal-meta { display: flex; gap: 1.5rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .modal-meta span { font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+    .modal-desc { font-size: 0.87rem; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 1.5rem; }
+    .modal-dl {
+      width: 100%; padding: 1rem;
+      background: var(--accent); border: none; border-radius: 50px;
+      font-family: 'Syne', sans-serif; font-size: 0.87rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.06em; color: #fff;
+      cursor: pointer; transition: all 0.2s;
+      box-shadow: 0 0 30px rgba(255,60,172,0.4);
+    }
+    .modal-dl:hover { transform: scale(1.01); box-shadow: 0 0 55px rgba(255,60,172,0.6); }
+
+    /* TOAST */
+    .toast {
+      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      background: rgba(13,0,21,0.95); border: 1px solid rgba(255,60,172,0.3);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 1.5rem; border-radius: 50px; z-index: 999;
+      font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700;
+      display: flex; align-items: center; gap: 0.6rem; white-space: nowrap;
+      animation: toastIn 0.4s ease, toastOut 0.4s ease 2.8s forwards;
+    }
+    .toast-dot { width: 8px; height: 8px; border-radius: 50%; background: #1db954; flex-shrink: 0; }
+
+    /* SCROLL UP */
+    .scroll-up {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 300;
+      width: 2.8rem; height: 2.8rem; border-radius: 50%;
+      background: var(--accent); border: none; color: #fff;
+      font-size: 1rem; cursor: pointer; opacity: 0;
+      transform: translateY(20px); transition: all 0.3s;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 20px rgba(255,60,172,0.45);
+    }
+    .scroll-up.show { opacity: 1; transform: translateY(0); }
+
+    /* EMPTY */
+    .empty { text-align: center; padding: 6rem 2rem; }
+    .empty-ico { font-size: 4rem; margin-bottom: 1rem; }
+    .empty-ttl { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; margin-bottom: 0.4rem; }
+    .empty-sub { color: rgba(255,255,255,0.3); font-size: 0.88rem; }
+
+    /* KEYFRAMES */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroFloat {
+      0%,100% { transform: translateY(-50%) rotate(-4deg); }
+      50% { transform: translateY(calc(-50% - 22px)) rotate(4deg); }
+    }
+    @keyframes orbFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(25px,-25px) scale(1.07); }
+    }
+    @keyframes toastIn { from { opacity:0; transform: translate(-50%,20px); } to { opacity:1; transform: translate(-50%,0); } }
+    @keyframes toastOut { from { opacity:1; } to { opacity:0; } }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .hero-float { opacity: 0.15; font-size: 9rem; right: -1rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .banner { flex-direction: column; margin: 0 1rem 4rem; padding: 2.5rem 1.5rem; }
+      .hero-stats { gap: 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Orbs -->
+  <div class="orb" style="width:550px;height:550px;background:radial-gradient(circle,rgba(123,47,247,0.22),transparent);top:-120px;right:-120px;animation-duration:9s;"></div>
+  <div class="orb" style="width:420px;height:420px;background:radial-gradient(circle,rgba(255,60,172,0.18),transparent);bottom:15%;left:-160px;animation-duration:12s;animation-direction:reverse;"></div>
+  <div class="orb" style="width:320px;height:320px;background:radial-gradient(circle,rgba(43,134,197,0.13),transparent);top:55%;right:8%;animation-duration:10s;animation-delay:2s;"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Zéro<span>lib</span></a>
+    <div class="nav-links">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#catalogue">Catégories</a>
+      <a href="#">À propos</a>
+      <button class="nav-btn">Connexion</button>
+    </div>
+    <button class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#catalogue">Catalogue</a>
+    <a href="#catalogue">Catégories</a>
+    <a href="#">À propos</a>
+    <a href="#">Connexion</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-float">📚</div>
+    <div class="hero-inner">
+      <div class="hero-tag">✦ Héritage du Site du Zéro — Préservé &amp; Libre</div>
+      <h1 class="hero-title">
+        LA<br/>
+        <span class="outline">BIBLIO</span><br/>
+        THÈQUE.
+      </h1>
+      <p class="hero-sub">Des dizaines de tutoriels et livres du Zéro, librement téléchargeables. Une archive vivante pour les passionnés du code.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('catalogue').scrollIntoView({behavior:'smooth'})">Explorer le catalogue →</button>
+        <button class="btn-ghost">En savoir plus</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">48+</div><div class="stat-label">Livres disponibles</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">Gratuit</div></div>
+        <div><div class="stat-num">8</div><div class="stat-label">Catégories</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="catalogue">
+    <div class="section-inner">
+      <div class="section-tag">✦ Explorer par thème</div>
+      <h2 class="section-title">Catégories<br/><span>populaires.</span></h2>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
+      <div class="search-bar">
+        <div class="search-wrap">
+          <svg class="search-ico" width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input class="search-input" type="text" id="searchInput" placeholder="Rechercher un livre, un auteur…"/>
+        </div>
+        <select class="sort-sel" id="sortSel">
+          <option value="recent">Plus récents</option>
+          <option value="alpha">A → Z</option>
+          <option value="popular">Populaires</option>
+        </select>
+      </div>
+      <div class="filter-pills" id="filterPills"></div>
+      <div class="result-hdr">
+        <div class="result-count"><span id="cntNum">12</span> Livres</div>
+        <div class="view-toggle">
+          <button class="vbtn active" id="gridBtn" onclick="setView('grid')">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/></svg>
+          </button>
+          <button class="vbtn" id="listBtn" onclick="setView('list')">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="booksContainer"></div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div>
+      <div class="banner-title">Des livres premium<br/><em>pour aller plus loin.</em></div>
+      <p class="banner-sub">Nous préparons une sélection de livres approfondis, rédigés par des experts, disponibles bientôt.</p>
+    </div>
+    <button class="btn-primary">Être notifié →</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Zéro<span>lib</span></div>
+          <p class="footer-desc">Une archive libre dédiée aux anciens livres du Site du Zéro, pour préserver et partager la connaissance.</p>
+        </div>
+        <div>
+          <div class="footer-h">Navigation</div>
+          <div class="footer-links">
+            <a href="#">Catalogue</a>
+            <a href="#">Catégories</a>
+            <a href="#">À propos</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-h">Légal</div>
+          <div class="footer-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm">
+        <p class="footer-copy">© 2025 Zérolib — Tous droits réservés.</p>
+        <p class="footer-copy">Fait avec ♥ pour la communauté</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-wrap" id="modal" style="display:none" onclick="closeModalBg(event)">
+    <div class="modal-box">
+      <div class="modal-cover" id="modalCover">
+        <div class="modal-emo" id="mEmo"></div>
+        <div>
+          <div class="modal-cat2" id="mCat"></div>
+          <div class="modal-ttl" id="mTtl"></div>
+        </div>
+        <button class="modal-x" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span id="mAuth"></span>
+          <span id="mPages"></span>
+          <span id="mYear"></span>
+        </div>
+        <p class="modal-desc" id="mDesc"></p>
+        <button class="modal-dl" id="mDlBtn">⬇ Télécharger gratuitement</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" style="display:none">
+    <div class="toast-dot"></div>
+    <span id="toastTxt"></span>
+  </div>
+
+  <!-- SCROLL UP -->
+  <button class="scroll-up" id="scrollUp" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    const books = [
+      {id:1, title:"Apprendre le C", author:"Mathieu Nebra", category:"Programmation", pages:312, year:2007, free:true, icon:"⚙️", color:"linear-gradient(135deg,#1a1a2e,#16213e)", desc:"Le tutoriel C historique du Site du Zéro. Introduction complète à la programmation en C, des bases aux pointeurs."},
+      {id:2, title:"Le JavaScript moderne", author:"Zozor & Communauté", category:"Web", pages:280, year:2009, free:true, icon:"✨", color:"linear-gradient(135deg,#b8860b,#8b6914)", desc:"Apprendre JavaScript de façon progressive, avec des exercices pratiques et projets concrets pour le web."},
+      {id:3, title:"PHP & MySQL", author:"Mathieu Nebra", category:"Web", pages:420, year:2008, free:true, icon:"🌐", color:"linear-gradient(135deg,#4a148c,#311b92)", desc:"Créez vos sites web dynamiques avec PHP et MySQL. Le guide de référence pour les débutants en développement web."},
+      {id:4, title:"Linux — Le manuel", author:"Communauté SDZ", category:"Linux", pages:350, year:2010, free:true, icon:"🐧", color:"linear-gradient(135deg,#1b5e20,#2e7d32)", desc:"Tout ce qu'il faut savoir pour administrer un système Linux : commandes de base aux scripts bash avancés."},
+      {id:5, title:"Algorithmique", author:"Esdeath", category:"Mathématiques", pages:220, year:2011, free:true, icon:"🧮", color:"linear-gradient(135deg,#880e4f,#c2185b)", desc:"Introduction à l'algorithmique et structures de données : tris, graphes, complexité et récursivité."},
+      {id:6, title:"Les réseaux", author:"Taguan", category:"Réseau", pages:390, year:2009, free:true, icon:"🌍", color:"linear-gradient(135deg,#0d47a1,#1565c0)", desc:"Comprendre les réseaux informatiques : modèle OSI, TCP/IP, Wi-Fi, DNS et sécurité réseau."},
+      {id:7, title:"Créer un jeu vidéo", author:"Guppy & Lucas", category:"Jeux", pages:260, year:2012, free:true, icon:"🎮", color:"linear-gradient(135deg,#4e342e,#6d4c41)", desc:"Développez votre premier jeu vidéo 2D avec SDL et C++. Sprites, collisions, sons et niveaux."},
+      {id:8, title:"Excel pour tous", author:"Maljuna Kodo", category:"Bureautique", pages:180, year:2010, free:true, icon:"📊", color:"linear-gradient(135deg,#006064,#00838f)", desc:"Maîtrisez Excel : formules, tableaux croisés dynamiques, macros VBA et visualisation de données."},
+      {id:9, title:"Python 3 — Débutant", author:"Aldian & Pierre", category:"Programmation", pages:298, year:2013, free:true, icon:"🐍", color:"linear-gradient(135deg,#33691e,#558b2f)", desc:"Python 3 de A à Z : syntaxe, fonctions, classes, modules et projets pratiques pour débutants."},
+      {id:10, title:"HTML & CSS", author:"Matthieu Desq", category:"Web", pages:310, year:2007, free:true, icon:"🎨", color:"linear-gradient(135deg,#bf360c,#e64a19)", desc:"Construire des pages web modernes et bien structurées avec HTML5 et CSS3, en partant de zéro."},
+      {id:11, title:"Java orienté objet", author:"Crois & Michel", category:"Programmation", pages:376, year:2011, free:true, icon:"☕", color:"linear-gradient(135deg,#212121,#424242)", desc:"Apprendre la POO avec Java : classes, héritage, interfaces, collections et bien plus encore."},
+      {id:12, title:"SQL — Bases de données", author:"Winjerome", category:"Programmation", pages:240, year:2009, free:true, icon:"🗄️", color:"linear-gradient(135deg,#01579b,#0277bd)", desc:"Maîtriser SQL et la conception de bases de données relationnelles : requêtes, jointures, transactions."},
+    ];
+
+    const cats = [
+      {name:"Tous", icon:"📚"}, {name:"Programmation", icon:"💻"}, {name:"Web", icon:"🌐"},
+      {name:"Linux", icon:"🐧"}, {name:"Réseau", icon:"🌍"}, {name:"Mathématiques", icon:"🧮"},
+      {name:"Jeux", icon:"🎮"}, {name:"Bureautique", icon:"📊"},
+    ];
+
+    let activeCat = "Tous", viewMode = "grid";
+
+    function renderCats() {
+      const g = document.getElementById("catGrid");
+      const p = document.getElementById("filterPills");
+      g.innerHTML = cats.map(c => {
+        const cnt = c.name==="Tous" ? books.length : books.filter(b=>b.category===c.name).length;
+        return `<div class="cat-card${activeCat===c.name?' active':''}" onclick="setCat('${c.name}')">
+          <div class="cat-icon">${c.icon}</div>
+          <div class="cat-name">${c.name}</div>
+          <div class="cat-count">${cnt} livre${cnt>1?'s':''}</div>
+        </div>`;
+      }).join('');
+      p.innerHTML = cats.map(c =>
+        `<button class="fpill${activeCat===c.name?' active':''}" onclick="setCat('${c.name}')">${c.icon} ${c.name}</button>`
+      ).join('');
+    }
+
+    function setCat(c) {
+      activeCat = c; renderCats(); renderBooks();
+      document.getElementById("catalogue").scrollIntoView({behavior:"smooth"});
+    }
+
+    function getFiltered() {
+      const q = document.getElementById("searchInput").value.toLowerCase();
+      const s = document.getElementById("sortSel").value;
+      let l = books.filter(b => {
+        const cm = activeCat==="Tous" || b.category===activeCat;
+        const qm = !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q) || b.category.toLowerCase().includes(q);
+        return cm && qm;
+      });
+      if (s==="alpha") l.sort((a,b)=>a.title.localeCompare(b.title));
+      else if (s==="popular") l.sort((a,b)=>b.pages-a.pages);
+      else l.sort((a,b)=>b.id-a.id);
+      return l;
+    }
+
+    function renderBooks() {
+      const l = getFiltered();
+      const c = document.getElementById("booksContainer");
+      document.getElementById("cntNum").textContent = l.length;
+      if (!l.length) {
+        c.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div><div class="empty-ttl">Aucun résultat</div><p class="empty-sub">Essayez d'autres mots-clés.</p></div>`;
+        return;
+      }
+      if (viewMode==="grid") {
+        c.className = "books-grid";
+        c.innerHTML = l.map(b => `
+          <div class="book-card" onclick="openModal(${b.id})">
+            <div class="book-cover" style="background:${b.color}">
+              <div class="book-emoji">${b.icon}</div>
+              <span class="book-badge ${b.free?'badge-free':'badge-prem'}">${b.free?'GRATUIT':'PREMIUM'}</span>
+            </div>
+            <div class="book-body">
+              <div class="book-cat">${b.category}</div>
+              <div class="book-title">${b.title}</div>
+              <div class="book-author">${b.author}</div>
+              <div class="book-foot">
+                <span class="book-pages">${b.pages} pages</span>
+                <button class="dl-btn" onclick="event.stopPropagation();dlBook(${b.id})">
+                  <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  DL
+                </button>
+              </div>
+            </div>
+          </div>`).join('');
+      } else {
+        c.className = "books-list";
+        c.innerHTML = l.map(b => `
+          <div class="book-list" onclick="openModal(${b.id})">
+            <div class="book-list-ico" style="background:${b.color}">${b.icon}</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:start;justify-content:space-between;gap:1rem">
+                <div>
+                  <div class="book-cat">${b.category}</div>
+                  <div class="book-title" style="font-size:.9rem">${b.title}</div>
+                  <div class="book-author">${b.author}</div>
+                </div>
+                <span class="book-badge ${b.free?'badge-free':'badge-prem'}" style="position:static;flex-shrink:0">${b.free?'GRATUIT':'PREMIUM'}</span>
+              </div>
+              <div class="book-list-desc">${b.desc}</div>
+              <div class="book-foot">
+                <span class="book-pages">${b.pages} p. · ${b.year}</span>
+                <button class="dl-btn" onclick="event.stopPropagation();dlBook(${b.id})">
+                  <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  Télécharger
+                </button>
+              </div>
+            </div>
+          </div>`).join('');
+      }
+    }
+
+    function setView(v) {
+      viewMode = v;
+      document.getElementById("gridBtn").className = "vbtn"+(v==="grid"?" active":"");
+      document.getElementById("listBtn").className = "vbtn"+(v==="list"?" active":"");
+      renderBooks();
+    }
+
+    function openModal(id) {
+      const b = books.find(x=>x.id===id);
+      document.getElementById("mEmo").textContent = b.icon;
+      document.getElementById("modalCover").style.background = b.color;
+      document.getElementById("mCat").textContent = b.category;
+      document.getElementById("mTtl").textContent = b.title;
+      document.getElementById("mAuth").textContent = "✍ "+b.author;
+      document.getElementById("mPages").textContent = "📄 "+b.pages+" pages";
+      document.getElementById("mYear").textContent = "📅 "+b.year;
+      document.getElementById("mDesc").textContent = b.desc;
+      document.getElementById("mDlBtn").onclick = () => { dlBook(id); closeModal(); };
+      document.getElementById("modal").style.display = "flex";
+    }
+    function closeModal() { document.getElementById("modal").style.display = "none"; }
+    function closeModalBg(e) { if (e.target===document.getElementById("modal")) closeModal(); }
+
+    function dlBook(id) {
+      const b = books.find(x=>x.id===id);
+      const t = document.getElementById("toast");
+      document.getElementById("toastTxt").textContent = `"${b.title}" — téléchargement démarré !`;
+      t.style.display = "flex"; t.style.animation = "none";
+      void t.offsetWidth;
+      t.style.animation = "toastIn 0.4s ease, toastOut 0.4s ease 2.8s forwards";
+      setTimeout(() => { t.style.display = "none"; }, 3300);
+    }
+
+    // Mobile nav
+    document.getElementById("burger").onclick = () => {
+      document.getElementById("mobileNav").classList.toggle("open");
+      document.getElementById("navOverlay").classList.toggle("open");
+    };
+    document.getElementById("navOverlay").onclick = () => {
+      document.getElementById("mobileNav").classList.remove("open");
+      document.getElementById("navOverlay").classList.remove("open");
+    };
+    document.querySelectorAll(".mobile-nav a").forEach(a => a.addEventListener("click", () => {
+      document.getElementById("mobileNav").classList.remove("open");
+      document.getElementById("navOverlay").classList.remove("open");
+    }));
+
+    window.addEventListener("scroll", () => {
+      document.getElementById("navbar").className = window.scrollY>50 ? "scrolled" : "";
+      const u = document.getElementById("scrollUp");
+      u.className = "scroll-up"+(window.scrollY>460?" show":"");
+    });
+
+    document.getElementById("searchInput").addEventListener("input", renderBooks);
+    document.getElementById("sortSel").addEventListener("change", renderBooks);
+
+    renderCats();
+    renderBooks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zéro Archives | Livres IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zorange: '#FF7900', // L'orange nostalgique
+                        zdark: '#0F172A',   // Bleu nuit moderne (Slate 900)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-zorange selection:text-white flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-zorange to-orange-400 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-200">
+                        Z
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-zdark">Archives<span class="text-zorange">.</span></span>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-slate-600 hover:text-zorange font-medium transition-colors">Accueil</a>
+                    <a href="#bibliotheque" class="text-slate-600 hover:text-zorange font-medium transition-colors">Bibliothèque Libre</a>
+                    <a href="#" class="flex items-center gap-1 text-slate-400 hover:text-slate-600 font-medium transition-colors group cursor-not-allowed" title="Bientôt disponible">
+                        Premium <i class="ph-fill ph-lock-key text-sm group-hover:text-amber-500 transition-colors"></i>
+                    </a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-slate-500 hover:text-zdark transition-colors">
+                        <i class="ph ph-magnifying-glass text-2xl"></i>
+                    </button>
+                    <a href="#" class="bg-zdark hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-md shadow-slate-200 active:scale-95">
+                        Connexion
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-zdark focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-zorange">Accueil</a>
+                <a href="#bibliotheque" class="block px-3 py-3 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-zorange">Bibliothèque Libre</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-slate-400 flex items-center gap-2">
+                    Premium <i class="ph-fill ph-lock-key text-sm"></i> <span class="text-xs bg-slate-100 px-2 py-1 rounded-full">Bientôt</span>
+                </a>
+                <div class="mt-4 pt-4 border-t border-slate-100">
+                    <a href="#" class="block w-full text-center bg-zdark text-white px-5 py-3 rounded-lg font-medium">Connexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="relative pt-20 pb-32 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+                <div class="absolute top-32 -left-24 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-orange-100 text-zorange text-sm font-semibold tracking-wide mb-6">Projet Open Source</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-zdark tracking-tight mb-8">
+                    Revivez la légende du <br class="hidden md:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-zorange to-orange-400">Site du Zéro.</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10">
+                    Téléchargez librement et gratuitement les anciens tutoriels qui ont formé toute une génération de développeurs francophones.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#bibliotheque" class="bg-zorange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-orange-200 flex items-center justify-center gap-2 active:scale-95">
+                        <i class="ph-bold ph-book-open"></i> Explorer la bibliothèque
+                    </a>
+                    <a href="#" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2 active:scale-95">
+                        <i class="ph ph-magnifying-glass"></i> Rechercher un cours
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="bibliotheque" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-zdark">Ajouts récents</h2>
+                        <p class="text-slate-500 mt-2">Les derniers classiques restaurés pour vous.</p>
+                    </div>
+                    <a href="#" class="hidden sm:flex text-zorange font-medium hover:text-orange-600 items-center gap-1">
+                        Voir tout <i class="ph-bold ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <div class="group flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="relative h-64 bg-slate-100 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 group-hover:scale-105 transition-transform duration-500"></div>
+                            <i class="ph-duotone ph-file-code text-7xl text-slate-400 relative z-10"></i>
+                            <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">
+                                Gratuit
+                            </span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="text-xs text-slate-400 mb-2 font-medium">Par Mathieu Nebra</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight group-hover:text-zorange transition-colors">Apprenez à programmer en C</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2 mb-6">Le cours mythique pour débuter la programmation en douceur avec le langage C.</p>
+
+                            <div class="mt-auto">
+                                <button class="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-download-simple"></i> Télécharger (PDF)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="relative h-64 bg-slate-100 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 group-hover:scale-105 transition-transform duration-500"></div>
+                            <i class="ph-duotone ph-file-html text-7xl text-blue-400 relative z-10"></i>
+                            <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">Gratuit</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="text-xs text-slate-400 mb-2 font-medium">Par Mathieu Nebra</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight group-hover:text-zorange transition-colors">Réalisez votre site web avec HTML5 et CSS3</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2 mb-6">Les bases incontournables pour créer ses premières pages web.</p>
+                            <div class="mt-auto">
+                                <button class="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-download-simple"></i> Télécharger (PDF)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-white/40 backdrop-blur-[1px] z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-zdark text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-xl">
+                                <i class="ph-fill ph-lock-key"></i> Bientôt disponible
+                            </span>
+                        </div>
+
+                        <div class="relative h-64 bg-slate-100 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 group-hover:scale-105 transition-transform duration-500"></div>
+                            <i class="ph-duotone ph-rocket-launch text-7xl text-amber-500 relative z-10"></i>
+                            <span class="absolute top-4 right-4 bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm flex items-center gap-1">
+                                <i class="ph-fill ph-star"></i> Premium
+                            </span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="text-xs text-slate-400 mb-2 font-medium">Auteur Mystère</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight">Masterclass Architecture Logicielle</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2 mb-6">Un contenu exclusif, moderne et mis à jour pour les professionnels.</p>
+                            <div class="mt-auto">
+                                <button class="w-full bg-slate-100 text-slate-400 py-2.5 rounded-lg font-medium cursor-not-allowed flex items-center justify-center gap-2">
+                                    Verrouillé
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="group flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        <div class="relative h-64 bg-slate-100 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 group-hover:scale-105 transition-transform duration-500"></div>
+                            <i class="ph-duotone ph-elephant text-7xl text-purple-400 relative z-10"></i>
+                            <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">Gratuit</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="text-xs text-slate-400 mb-2 font-medium">Par Mateo21</div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight group-hover:text-zorange transition-colors">Concevez votre site web avec PHP et MySQL</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2 mb-6">Le duo dynamique pour rendre votre site web interactif.</p>
+                            <div class="mt-auto">
+                                <button class="w-full bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                    <i class="ph-bold ph-download-simple"></i> Télécharger (PDF)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-8 text-center sm:hidden">
+                    <a href="#" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-6 py-3 rounded-xl font-medium transition-colors">
+                        Voir toute la bibliothèque <i class="ph-bold ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg flex items-center justify-center text-slate-500 font-bold text-sm">Z</div>
+                <span class="font-bold text-slate-800">Archives.</span>
+            </div>
+            <p class="text-slate-500 text-sm text-center md:text-left">
+                © 2026 Zéro Archives. Projet communautaire non affilié à OpenClassrooms.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-slate-400 hover:text-zorange transition-colors"><i class="ph-fill ph-github-logo text-2xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-zorange transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                } else {
+                    icon.classList.remove('ph-list');
+                    icon.classList.add('ph-x');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
