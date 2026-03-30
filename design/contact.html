@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zérolib — Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            ink:       '#0e0c0a',
+            parchment: '#f5f0e8',
+            cream:     '#faf7f2',
+            amber:     '#c8883a',
+            amber2:    '#e6a24e',
+            rust:      '#9c3d2e',
+            sage:      '#4a6741',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #0e0c0a; --parchment: #f5f0e8; --cream: #faf7f2;
+      --amber: #c8883a; --rust: #9c3d2e; --sage: #4a6741;
+    }
+    * { box-sizing: border-box; }
+    body { background-color: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+
+    /* Grain */
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    /* Nav */
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--amber); transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: #c8b89a; border-radius: 3px; }
+
+    /* Animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .stagger-1 { animation: fadeUp 0.6s ease 0.1s forwards; opacity: 0; }
+    .stagger-2 { animation: fadeUp 0.6s ease 0.25s forwards; opacity: 0; }
+    .stagger-3 { animation: fadeUp 0.6s ease 0.4s forwards; opacity: 0; }
+    .stagger-4 { animation: fadeUp 0.6s ease 0.55s forwards; opacity: 0; }
+
+    /* Hero cut */
+    .hero-cut { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+
+    /* Ornament divider */
+    .ornament { display: flex; align-items: center; gap: 16px; }
+    .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(200,136,58,0.35), transparent); }
+
+    /* Form fields */
+    .field {
+      width: 100%; background: white; border: 1.5px solid rgba(200,136,58,0.2);
+      border-radius: 10px; padding: 12px 16px; font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; color: var(--ink); transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(200,136,58,0.1); }
+    .field::placeholder { color: rgba(14,12,10,0.35); }
+    .field-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(14,12,10,0.45); margin-bottom: 6px; display: block; }
+
+    /* Reason cards */
+    .reason-card { cursor: pointer; transition: all 0.2s ease; border: 1.5px solid rgba(200,136,58,0.15); }
+    .reason-card:hover { border-color: rgba(200,136,58,0.5); background: rgba(200,136,58,0.04); }
+    .reason-card input[type="radio"]:checked + label { color: var(--ink); }
+    .reason-card:has(input:checked) { border-color: var(--amber); background: rgba(200,136,58,0.06); }
+
+    /* Submit button */
+    .btn-submit { transition: all 0.25s ease; }
+    .btn-submit:hover { background: var(--amber); letter-spacing: 0.02em; }
+    .btn-submit:active { transform: scale(0.98); }
+
+    /* Contact item hover */
+    .contact-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .contact-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14,12,10,0.09); }
+
+    /* Character counter */
+    #char-count { transition: color 0.2s; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-amber/20">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 bg-ink rounded flex items-center justify-center group-hover:bg-amber transition-colors duration-300">
+          <svg class="w-4 h-4 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <span class="font-serif font-black text-ink text-xl">Zéro<span class="text-amber">lib</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink/70">
+        <a href="index.html"  class="nav-link hover:text-ink transition-colors">Catalogue</a>
+        <a href="about.html" class="nav-link hover:text-ink transition-colors">À propos</a>
+        <a href="contact.html" class="nav-link hover:text-ink transition-colors text-amber font-semibold">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-cut bg-ink pt-28 pb-32 sm:pt-36 sm:pb-40 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-12 left-0 right-0 h-px bg-amber"></div>
+      <div class="absolute top-24 left-0 right-0 h-px bg-amber"></div>
+      <div class="absolute bottom-20 left-0 right-0 h-px bg-amber"></div>
+    </div>
+    <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full border border-amber/8"></div>
+    <div class="absolute -left-8 top-1/2 -translate-y-1/2 w-52 h-52 rounded-full border border-amber/10"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="stagger-1">
+        <span class="inline-block text-amber text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+          Écrivez-nous
+        </span>
+      </div>
+      <h1 class="stagger-2 font-serif font-black text-cream text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+        Chaque message<br/>
+        <em class="text-amber not-italic">compte vraiment.</em>
+      </h1>
+      <p class="stagger-3 text-cream/60 text-lg leading-relaxed max-w-2xl">
+        Question sur un livre, demande de retrait, suggestion, signalement de contenu —
+        toutes les raisons sont bonnes. Il y a une vraie personne derrière cette adresse,
+        et elle vous lira.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENU -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+
+      <!-- COL GAUCHE : Formulaire -->
+      <div class="lg:col-span-3 space-y-6 stagger-4">
+
+        <div>
+          <h2 class="font-serif font-bold text-2xl text-ink mb-1">Envoyez un message</h2>
+          <p class="text-ink/50 text-sm">Réponse sous 48 h en général — souvent bien avant.</p>
+        </div>
+
+        <!-- RAISON DU CONTACT -->
+        <div>
+          <span class="field-label block mb-3">Quel est le motif de votre message ?</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="reason-group">
+
+            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+              <input type="radio" name="reason" id="r1" value="retrait" class="mt-0.5 accent-amber flex-shrink-0" />
+              <label for="r1" class="cursor-pointer">
+                <span class="block text-sm font-semibold text-ink leading-tight">🚩 Retrait de contenu</span>
+                <span class="block text-xs text-ink/45 mt-0.5">Vous êtes auteur et souhaitez un retrait</span>
+              </label>
+            </div>
+
+            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+              <input type="radio" name="reason" id="r2" value="droit" class="mt-0.5 accent-amber flex-shrink-0" />
+              <label for="r2" class="cursor-pointer">
+                <span class="block text-sm font-semibold text-ink leading-tight">⚖️ Droit d'auteur</span>
+                <span class="block text-xs text-ink/45 mt-0.5">Licence, attribution ou droits à faire valoir</span>
+              </label>
+            </div>
+
+            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+              <input type="radio" name="reason" id="r3" value="suggestion" class="mt-0.5 accent-amber flex-shrink-0" />
+              <label for="r3" class="cursor-pointer">
+                <span class="block text-sm font-semibold text-ink leading-tight">💡 Suggestion de livre</span>
+                <span class="block text-xs text-ink/45 mt-0.5">Proposer un titre à ajouter à la bibliothèque</span>
+              </label>
+            </div>
+
+            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+              <input type="radio" name="reason" id="r4" value="erreur" class="mt-0.5 accent-amber flex-shrink-0" />
+              <label for="r4" class="cursor-pointer">
+                <span class="block text-sm font-semibold text-ink leading-tight">🔧 Signaler une erreur</span>
+                <span class="block text-xs text-ink/45 mt-0.5">Lien cassé, info incorrecte, bug technique</span>
+              </label>
+            </div>
+
+            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3 sm:col-span-2">
+              <input type="radio" name="reason" id="r5" value="autre" class="mt-0.5 accent-amber flex-shrink-0" />
+              <label for="r5" class="cursor-pointer">
+                <span class="block text-sm font-semibold text-ink leading-tight">✉️ Autre message</span>
+                <span class="block text-xs text-ink/45 mt-0.5">Une question, un retour, ou simplement dire bonjour</span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FORMULAIRE -->
+        <form action="#" method="POST" class="space-y-4" onsubmit="return handleSubmit(event)">
+          @csrf {{-- À conserver si intégré dans Laravel --}}
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="field-label">Nom complet <span class="text-rust">*</span></label>
+              <input type="text" id="name" name="name" required
+                     placeholder="Mathieu Nebra"
+                     class="field" />
+            </div>
+            <div>
+              <label for="email" class="field-label">Adresse e-mail <span class="text-rust">*</span></label>
+              <input type="email" id="email" name="email" required
+                     placeholder="vous@exemple.fr"
+                     class="field" />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="field-label">Sujet <span class="text-rust">*</span></label>
+            <input type="text" id="subject" name="subject" required
+                   placeholder="ex : Demande de retrait — Apprendre le C"
+                   class="field" />
+          </div>
+
+          <div>
+            <div class="flex items-end justify-between mb-1.5">
+              <label for="message" class="field-label mb-0">Message <span class="text-rust">*</span></label>
+              <span id="char-count" class="text-xs text-ink/30">0 / 1000</span>
+            </div>
+            <textarea id="message" name="message" required rows="6"
+                      maxlength="1000"
+                      placeholder="Décrivez votre demande avec le maximum de détails…"
+                      class="field resize-none"
+                      oninput="updateCount(this)"></textarea>
+          </div>
+
+          <!-- Engagement RGPD sobre -->
+          <p class="text-xs text-ink/35 leading-relaxed">
+            Vos données sont utilisées uniquement pour répondre à votre message.
+            Elles ne sont ni stockées en base ni partagées avec des tiers.
+          </p>
+
+          <button type="submit"
+                  class="btn-submit w-full py-4 bg-ink text-cream font-semibold rounded-xl text-sm tracking-wide flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+            Envoyer le message
+          </button>
+
+          <!-- Message de confirmation (caché par défaut) -->
+          <div id="success-msg"
+               class="hidden items-center gap-3 px-4 py-3 bg-sage/10 border border-sage/25 rounded-xl text-sage text-sm">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+            </svg>
+            <span>Message envoyé ! Nous vous répondrons dans les plus brefs délais.</span>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- COL DROIT : Infos + Contexte -->
+      <div class="lg:col-span-2 space-y-5 lg:pt-10">
+
+        <!-- Carte : email direct -->
+        <a href="mailto:contact@zerolib.fr"
+           class="contact-item block bg-white border border-amber/15 rounded-2xl p-5 no-underline group">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-parchment rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-amber/15 transition-colors">
+              <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block text-xs font-semibold uppercase tracking-wider text-ink/40 mb-0.5">Email direct</span>
+              <span class="block text-sm font-medium text-ink group-hover:text-amber transition-colors">contact@zerolib.fr</span>
+              <span class="block text-xs text-ink/40 mt-0.5">Réponse sous 48 h</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Carte : demande urgente / retrait -->
+        <div class="bg-rust/6 border border-rust/20 rounded-2xl p-5">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-xl flex-shrink-0">🚩</span>
+            <div>
+              <span class="block text-sm font-semibold text-ink">Demande de retrait urgente ?</span>
+              <span class="block text-xs text-ink/50 mt-0.5 leading-relaxed">
+                Si vous êtes l'auteur d'un contenu publié ici sans votre accord,
+                écrivez directement avec l'objet <strong class="text-ink">[RETRAIT URGENT]</strong>
+                — votre demande sera traitée en priorité, sous 24 h.
+              </span>
+            </div>
+          </div>
+          <a href="mailto:contact@zerolib.fr?subject=[RETRAIT URGENT]"
+             class="inline-flex items-center gap-1.5 text-xs font-semibold text-rust hover:underline">
+            Envoyer un retrait urgent
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Séparateur -->
+        <div class="ornament py-1">
+          <span class="text-xs text-ink/25 font-medium px-2 whitespace-nowrap">ou rejoignez la communauté</span>
+        </div>
+
+        <!-- Carte : GitHub -->
+        <a href="https://github.com/zerolib" target="_blank" rel="noopener"
+           class="contact-item block bg-white border border-amber/15 rounded-2xl p-5 no-underline group">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-parchment rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-amber/15 transition-colors">
+              <svg class="w-5 h-5 text-ink" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block text-xs font-semibold uppercase tracking-wider text-ink/40 mb-0.5">GitHub</span>
+              <span class="block text-sm font-medium text-ink group-hover:text-amber transition-colors">Contribuer au projet</span>
+              <span class="block text-xs text-ink/40 mt-0.5">Signaler un bug, proposer une amélioration</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Note humaine -->
+        <div class="bg-parchment rounded-2xl p-5">
+          <p class="font-serif text-ink/80 text-base italic leading-relaxed">
+            « Zérolib est un projet personnel. Il y a une seule personne derrière,
+            avec un boulot à côté. Merci pour votre patience. »
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FAQ RAPIDE -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+
+    <div class="ornament mb-8">
+      <span class="text-xs font-semibold tracking-widest uppercase text-amber/70 px-3 whitespace-nowrap">
+        Questions fréquentes
+      </span>
+    </div>
+
+    <div class="space-y-3" id="faq">
+
+      <details class="bg-white border border-amber/15 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-sm select-none hover:bg-parchment/50 transition-colors">
+          Je suis auteur d'un livre présent sur Zérolib. Comment le faire retirer ?
+          <svg class="w-4 h-4 text-amber flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink/65 leading-relaxed border-t border-amber/10 pt-4">
+          Envoyez un email à <a href="mailto:contact@zerolib.fr?subject=[RETRAIT URGENT]" class="text-amber hover:underline">contact@zerolib.fr</a>
+          avec l'objet <strong>[RETRAIT URGENT]</strong>, en précisant le titre du livre et votre lien avec l'œuvre.
+          Le retrait sera effectué sous 24 h, sans discussion ni condition.
+        </div>
+      </details>
+
+      <details class="bg-white border border-amber/15 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-sm select-none hover:bg-parchment/50 transition-colors">
+          Je voudrais proposer un ancien livre du SDZ que j'ai retrouvé. Comment faire ?
+          <svg class="w-4 h-4 text-amber flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink/65 leading-relaxed border-t border-amber/10 pt-4">
+          Avec plaisir ! Utilisez le formulaire ci-dessus en sélectionnant
+          <strong>« Suggestion de livre »</strong>. Précisez le titre, l'auteur si vous le connaissez,
+          et la licence sous laquelle il a été publié. Nous vérifierons et l'ajouterons si possible.
+        </div>
+      </details>
+
+      <details class="bg-white border border-amber/15 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-sm select-none hover:bg-parchment/50 transition-colors">
+          Puis-je utiliser les livres de Zérolib pour mes cours ou formations ?
+          <svg class="w-4 h-4 text-amber flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink/65 leading-relaxed border-t border-amber/10 pt-4">
+          Cela dépend de la licence du livre concerné. Chaque livre affiche sa licence Creative Commons.
+          Si elle inclut la mention <strong>NC (Non Commercial)</strong>, tout usage dans un cadre
+          commercial ou payant est exclu. En cas de doute, consultez la <a href="about.html" class="text-amber hover:underline">page À propos</a>
+          ou écrivez-nous.
+        </div>
+      </details>
+
+      <details class="bg-white border border-amber/15 rounded-xl overflow-hidden group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-sm select-none hover:bg-parchment/50 transition-colors">
+          Je n'ai pas reçu de réponse depuis plusieurs jours. Que faire ?
+          <svg class="w-4 h-4 text-amber flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink/65 leading-relaxed border-t border-amber/10 pt-4">
+          Vérifiez d'abord vos courriers indésirables — les réponses depuis une adresse personnelle
+          peuvent y atterrir. Si rien après 5 jours, relancez directement par email à
+          <a href="mailto:contact@zerolib.fr" class="text-amber hover:underline">contact@zerolib.fr</a>.
+          Zérolib est géré par une seule personne : les délais peuvent varier,
+          mais aucun message n'est ignoré.
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-cream py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between gap-8 mb-10">
+        <div>
+          <div class="font-serif text-xl font-bold mb-3">Zéro<span class="text-amber">lib</span></div>
+          <p class="text-cream/40 text-sm max-w-xs">
+            Une archive libre dédiée aux anciens livres du Site du Zéro,
+            pour préserver et partager la connaissance.
+          </p>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <h4 class="text-xs font-semibold tracking-wider uppercase text-cream/40 mb-3">Navigation</h4>
+            <div class="flex flex-col gap-2 text-sm text-cream/60">
+              <a href="index.html"   class="hover:text-amber transition-colors">Catalogue</a>
+              <a href="about.html"   class="hover:text-amber transition-colors">À propos</a>
+              <a href="contact.html" class="hover:text-amber transition-colors">Contact</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold tracking-wider uppercase text-cream/40 mb-3">Légal</h4>
+            <div class="flex flex-col gap-2 text-sm text-cream/60">
+              <a href="#" class="hover:text-amber transition-colors">Mentions légales</a>
+              <a href="#" class="hover:text-amber transition-colors">Licences CC</a>
+              <a href="mailto:contact@zerolib.fr" class="hover:text-amber transition-colors">Email direct</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <p class="text-cream/30 text-xs">© 2025 Zérolib — Tous droits réservés.</p>
+        <p class="text-cream/30 text-xs">Fait avec ♥ pour la communauté</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Compteur de caractères
+    function updateCount(el) {
+      const count = el.value.length;
+      const display = document.getElementById('char-count');
+      display.textContent = count + ' / 1000';
+      display.style.color = count > 900 ? 'var(--rust)' : count > 700 ? 'var(--amber)' : '';
+    }
+
+    // Simulation d'envoi (à remplacer par le vrai traitement Laravel)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const msg = document.getElementById('success-msg');
+
+      btn.disabled = true;
+      btn.innerHTML = `
+        <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+        </svg>
+        Envoi en cours…
+      `;
+
+      setTimeout(() => {
+        btn.classList.add('hidden');
+        msg.classList.remove('hidden');
+        msg.classList.add('flex');
+        e.target.reset();
+        document.getElementById('char-count').textContent = '0 / 1000';
+      }, 1400);
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>

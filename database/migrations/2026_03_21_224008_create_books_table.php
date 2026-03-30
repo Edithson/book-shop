@@ -16,10 +16,14 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->integer('price'); // En FCFA, donc pas besoin de décimales
+            $table->string('author')->nullable();
+            $table->integer('price')->nullable()->default(0); // En FCFA, donc pas besoin de décimales
             $table->string('cover_path')->nullable(); // Chemin public de l'image
             $table->string('file_path')->nullable(); // Chemin privé du PDF
+            $table->integer('nbr_pages')->default(10);
+            $table->integer('publish_year')->nullable()->default(2026);
             $table->boolean('is_published')->default(true);
+            $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }
