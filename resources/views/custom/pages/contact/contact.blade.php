@@ -14,57 +14,57 @@
           <p class="text-ink/50 text-sm">Réponse sous 48 h en général — souvent bien avant.</p>
         </div>
 
-        <!-- RAISON DU CONTACT -->
-        <div>
-          <span class="field-label block mb-3">Quel est le motif de votre message ?</span>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="reason-group">
-
-            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
-              <input type="radio" name="reason" id="r1" value="retrait" class="mt-0.5 accent-amber flex-shrink-0" />
-              <label for="r1" class="cursor-pointer">
-                <span class="block text-sm font-semibold text-ink leading-tight">🚩 Retrait de contenu</span>
-                <span class="block text-xs text-ink/45 mt-0.5">Vous êtes auteur et souhaitez un retrait</span>
-              </label>
-            </div>
-
-            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
-              <input type="radio" name="reason" id="r2" value="droit" class="mt-0.5 accent-amber flex-shrink-0" />
-              <label for="r2" class="cursor-pointer">
-                <span class="block text-sm font-semibold text-ink leading-tight">⚖️ Droit d'auteur</span>
-                <span class="block text-xs text-ink/45 mt-0.5">Licence, attribution ou droits à faire valoir</span>
-              </label>
-            </div>
-
-            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
-              <input type="radio" name="reason" id="r3" value="suggestion" class="mt-0.5 accent-amber flex-shrink-0" />
-              <label for="r3" class="cursor-pointer">
-                <span class="block text-sm font-semibold text-ink leading-tight">💡 Suggestion de livre</span>
-                <span class="block text-xs text-ink/45 mt-0.5">Proposer un titre à ajouter à la bibliothèque</span>
-              </label>
-            </div>
-
-            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
-              <input type="radio" name="reason" id="r4" value="erreur" class="mt-0.5 accent-amber flex-shrink-0" />
-              <label for="r4" class="cursor-pointer">
-                <span class="block text-sm font-semibold text-ink leading-tight">🔧 Signaler une erreur</span>
-                <span class="block text-xs text-ink/45 mt-0.5">Lien cassé, info incorrecte, bug technique</span>
-              </label>
-            </div>
-
-            <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3 sm:col-span-2">
-              <input type="radio" name="reason" id="r5" value="autre" class="mt-0.5 accent-amber flex-shrink-0" />
-              <label for="r5" class="cursor-pointer">
-                <span class="block text-sm font-semibold text-ink leading-tight">✉️ Autre message</span>
-                <span class="block text-xs text-ink/45 mt-0.5">Une question, un retour, ou simplement dire bonjour</span>
-              </label>
-            </div>
-
-          </div>
-        </div>
 
         <!-- FORMULAIRE -->
-        <form action="#" method="POST" class="space-y-4" onsubmit="return handleSubmit(event)">
-          @csrf {{-- À conserver si intégré dans Laravel --}}
+        <form action="{{ route('contact.store') }}" method="POST" class="space-y-4" onsubmit="return handleSubmit(event)">
+            @csrf
+            <!-- RAISON DU CONTACT -->
+            <div>
+                <span class="field-label block mb-3">Quel est le motif de votre message ?</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="reason-group">
+
+                <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+                    <input type="radio" name="motif" id="r1" value="retrait" class="mt-0.5 accent-amber flex-shrink-0" />
+                    <label for="r1" class="cursor-pointer">
+                    <span class="block text-sm font-semibold text-ink leading-tight">🚩 Retrait de contenu</span>
+                    <span class="block text-xs text-ink/45 mt-0.5">Vous êtes auteur et souhaitez un retrait</span>
+                    </label>
+                </div>
+
+                <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+                    <input type="radio" name="motif" id="r2" value="droit" class="mt-0.5 accent-amber flex-shrink-0" />
+                    <label for="r2" class="cursor-pointer">
+                    <span class="block text-sm font-semibold text-ink leading-tight">⚖️ Droit d'auteur</span>
+                    <span class="block text-xs text-ink/45 mt-0.5">Licence, attribution ou droits à faire valoir</span>
+                    </label>
+                </div>
+
+                <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+                    <input type="radio" name="motif" id="r3" value="suggestion" class="mt-0.5 accent-amber flex-shrink-0" />
+                    <label for="r3" class="cursor-pointer">
+                    <span class="block text-sm font-semibold text-ink leading-tight">💡 Suggestion de livre</span>
+                    <span class="block text-xs text-ink/45 mt-0.5">Proposer un titre à ajouter à la bibliothèque</span>
+                    </label>
+                </div>
+
+                <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3">
+                    <input type="radio" name="motif" id="r4" value="erreur" class="mt-0.5 accent-amber flex-shrink-0" />
+                    <label for="r4" class="cursor-pointer">
+                    <span class="block text-sm font-semibold text-ink leading-tight">🔧 Signaler une erreur</span>
+                    <span class="block text-xs text-ink/45 mt-0.5">Lien cassé, info incorrecte, bug technique</span>
+                    </label>
+                </div>
+
+                <div class="reason-card bg-white rounded-xl p-3.5 flex items-start gap-3 sm:col-span-2">
+                    <input type="radio" name="motif" id="r5" value="autre" class="mt-0.5 accent-amber flex-shrink-0" />
+                    <label for="r5" class="cursor-pointer">
+                    <span class="block text-sm font-semibold text-ink leading-tight">✉️ Autre message</span>
+                    <span class="block text-xs text-ink/45 mt-0.5">Une question, un retour, ou simplement dire bonjour</span>
+                    </label>
+                </div>
+
+                </div>
+            </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -203,4 +203,76 @@
       </div>
     </div>
   </main>
+
+  <script>
+        // Compteur de caractères (inchangé)
+        function updateCount(el) {
+            const count = el.value.length;
+            const display = document.getElementById('char-count');
+            display.textContent = count + ' / 1000';
+            display.style.color = count > 900 ? 'var(--rust)' : count > 700 ? 'var(--amber)' : '';
+        }
+
+        // Traitement réel de l'envoi via Fetch API
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const msg = document.getElementById('success-msg');
+
+            // Sauvegarde du texte original du bouton en cas d'erreur
+            const originalBtnHtml = btn.innerHTML;
+
+            // Activation de l'état de chargement
+            btn.disabled = true;
+            btn.innerHTML = `
+                <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+                </svg>
+                Envoi en cours…
+            `;
+
+            try {
+                // Envoi de la requête au serveur
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Succès : on affiche le message et on réinitialise
+                    btn.classList.add('hidden');
+                    msg.classList.remove('hidden');
+                    msg.classList.add('flex');
+                    form.reset();
+                    document.getElementById('char-count').textContent = '0 / 1000';
+                } else {
+                    // Erreur de validation (422) ou autre erreur serveur
+                    const data = await response.json();
+                    console.error('Erreur de validation:', data.errors);
+                    alert("Une erreur est survenue lors de la vérification de vos informations. Veuillez revérifier les champs.");
+
+                    // Restauration du bouton
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnHtml;
+                }
+            } catch (error) {
+                console.error('Erreur réseau:', error);
+                alert("Une erreur réseau est survenue. Veuillez réessayer.");
+
+                // Restauration du bouton
+                btn.disabled = false;
+                btn.innerHTML = originalBtnHtml;
+            }
+
+            return false;
+        }
+    </script>
+
 @endsection

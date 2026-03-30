@@ -109,14 +109,17 @@
                 {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
             </div>
             <div class="min-w-0">
-                <div class="text-cream text-sm font-medium truncate">
-                    {{ Auth::user()->name ?? 'Administrateur' }}
-                </div>
-                <div class="text-white/30 text-xs truncate">
-                    {{ Auth::user()->email ?? 'admin@zerolib.fr' }}
-                </div>
+                <a href="{{route('admin.profile')}}">
+                    <div class="text-cream text-sm font-medium truncate">
+                        {{ Auth::user()->name ?? 'Administrateur' }}
+                    </div>
+                    <div class="text-white/30 text-xs truncate">
+                        {{ Auth::user()->email ?? 'admin@zerolib.fr' }}
+                    </div>
+                </a>
             </div>
-            <form method="POST" action="#" class="ml-auto flex-shrink-0">
+            {{-- Déconnexion --}}
+            <form method="POST" action="{{ route('logout') }}" class="ml-auto flex-shrink-0">
                 @csrf
                 <button type="submit" class="text-white/30 hover:text-rust transition-colors" title="Déconnexion">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

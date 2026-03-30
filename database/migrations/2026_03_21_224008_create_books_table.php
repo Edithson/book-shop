@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
+            $table->string('author')->nullable();
             $table->integer('price')->nullable()->default(0); // En FCFA, donc pas besoin de décimales
             $table->string('cover_path')->nullable(); // Chemin public de l'image
             $table->string('file_path')->nullable(); // Chemin privé du PDF
