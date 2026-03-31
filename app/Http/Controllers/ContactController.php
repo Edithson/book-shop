@@ -6,6 +6,8 @@ use App\Models\Contact;
 use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {
@@ -37,5 +39,48 @@ class ContactController extends Controller
             'success' => true,
             'message' => 'Votre message a bien été envoyé.'
         ]);
+    }
+
+    /**
+     * Liste tous les messages de contact (paginés)
+     */
+    public function index(): View
+    {
+        // On trie par date de création (les plus récents en premier)
+        $contacts = Contact::latest()->paginate(15);
+
+        return view('admin.pages.contacts.index', [
+            'contacts'  => $contacts,
+            'pageTitle' => 'Messages reçus',
+            'unreadCount' => Contact::where('is_read', false)->count()
+        ]);
+    }
+
+    /**
+     * Affiche un message spécifique et le marque comme lu
+     */
+    public function show(Contact $contact): View
+    {
+        // Marquer comme lu si ce n'est pas déjà le cas
+        if (!$contact->is_read) {
+            $contact->update(['is_read' => true]);
+        }
+
+        return view('admin.pages.contacts.show', [
+            'contact'   => $contact,
+            'pageTitle' => 'Lecture du message',
+        ]);
+    }
+
+    /**
+     * Supprime un message
+     */
+    public function destroy(Contact $contact): RedirectResponse
+    {
+        $contact->delete();
+
+        return redirect()
+            ->route('admin.contacts.index')
+            ->with('success', 'Le message a été supprimé définitivement.');
     }
 }

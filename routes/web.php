@@ -42,8 +42,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
 
+    // routes pour les paramètres du site
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
+
+    // routes pour les messages de contact
+    Route::get('/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('admin.contacts.show');
+    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
+
 });
 
 Route::get('/books/{book}/download', [DownloadController::class, 'download'])->name('books.download');
