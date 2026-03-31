@@ -11,6 +11,7 @@ use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\SocialAuthController;
+use App\Http\Controllers\SettingController;
 
 // Route::view('/', 'welcome');
 
@@ -41,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
 
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
 });
 
 Route::get('/books/{book}/download', [DownloadController::class, 'download'])->name('books.download');

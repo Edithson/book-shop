@@ -26,9 +26,11 @@
                 class="nav-link text-sm font-medium transition-colors {{ request()->routeIs('contact') ? 'text-amber font-bold' : 'text-ink/70 hover:text-ink' }}">
                 Contact
         </a>
-        <button class="px-4 py-2 bg-ink text-cream text-sm font-medium rounded hover:bg-amber transition-colors duration-200">
-            Connexion
-        </button>
+        @if (Auth::check() && Auth::user()->type_id >= 1)
+            <a href="{{ route('admin.dashboard') }}" class="px-4 py-2 bg-ink text-cream text-sm font-medium rounded hover:bg-amber transition-colors duration-200">
+                Admin
+            </a>
+        @endif
     </div>
 
     <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none" aria-label="Menu">
