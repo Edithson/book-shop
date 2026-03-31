@@ -79,7 +79,8 @@ class UserController extends Controller
         $data = [
             'name'    => $validated['name'],
             'email'   => $validated['email'],
-            'type_id' => $validated['type_id'],
+            // convertir le type en entire pour la base de données
+            'type_id' => (int) $validated['type_id'],
         ];
 
         // Si l'admin a rempli le champ mot de passe, on le met à jour

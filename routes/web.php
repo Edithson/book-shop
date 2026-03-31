@@ -6,12 +6,13 @@ use App\Http\Controllers\Dashboard;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\SocialAuthController;
-use App\Http\Controllers\SettingController;
 
 // Route::view('/', 'welcome');
 
@@ -47,9 +48,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
 
     // routes pour les messages de contact
-    Route::get('/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
-    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('admin.contacts.show');
-    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
+    Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/admin/contacts/{contact}', [ContactController::class, 'show'])->name('admin.contacts.show');
+    Route::delete('/admin/contacts/{contact}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
+
+    // route pour la gestion des utilisateurs
+    Route::resource('/admin/users', UserController::class)->names('admin.users')->except(['show']);
 
 });
 
