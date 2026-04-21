@@ -13,6 +13,7 @@ use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\SocialAuthController;
+use App\Http\Controllers\NewslatterController;
 
 // Route::view('/', 'welcome');
 
@@ -20,6 +21,9 @@ Route::get('/', HomeController::class . '@index')->name('home');
 Route::get('/about', HomeController::class . '@about')->name('about');
 Route::get('/contact', HomeController::class . '@contact')->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/newsletter/subscribe', [NewslatterController::class, 'store'])
+     ->name('newsletter.subscribe');
 
 // Proteger les routes d'administration avec une middleware d'authentification
 Route::middleware(['auth'])->group(function () {

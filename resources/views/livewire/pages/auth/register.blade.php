@@ -310,15 +310,6 @@ new #[Layout('layouts.guest')] class extends Component
                         Créer mon compte
                     </span>
 
-                    <span wire:loading wire:target="register"
-                          style="display:flex; align-items:center; gap:8px;">
-                        <svg style="animation:zl-spin 0.8s linear infinite;" width="16" height="16" fill="none" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" style="opacity:.25"/>
-                            <path fill="currentColor" style="opacity:.8" d="M4 12a8 8 0 018-8v8z"/>
-                        </svg>
-                        Création en cours…
-                    </span>
-
                 </button>
 
             </form>
