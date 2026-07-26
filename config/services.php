@@ -57,4 +57,8 @@ return [
         'hash_key'   => env('NOTCHPAY_HASH_KEY'),
     ],
 
+    'google_analytics' => [
+        'id' => env('GA_MEASUREMENT_ID'),
+    ],
+
 ];
