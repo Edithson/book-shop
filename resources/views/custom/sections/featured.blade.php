@@ -71,7 +71,7 @@
             <div class="flex-1">
                 <p class="text-amber text-xs tracking-[0.3em] uppercase font-semibold mb-3">✦ Bientôt disponible</p>
                 <h2 class="font-serif text-3xl md:text-4xl font-black mb-4 leading-tight">
-                    Des livres premium<br/><span class="italic">pour aller plus loin.</span>
+                    De nouveaux livres<br/><span class="italic">pour aller plus loin.</span>
                 </h2>
                 <p class="text-ink/60 text-sm max-w-md leading-relaxed">
                     Nous préparons une sélection de livres approfondis, rédigés par des experts, disponibles à la vente pour soutenir la communauté.
