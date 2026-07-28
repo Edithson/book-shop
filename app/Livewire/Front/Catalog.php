@@ -119,11 +119,7 @@ class Catalog extends Component
                          ->withCount('downloads');
 
             if ($this->search) {
-                $query->where(function ($q) {
-                    $q->where('title', 'like', "%{$this->search}%")
-                      ->orWhere('author', 'like', "%{$this->search}%")
-                      ->orWhere('description', 'like', "%{$this->search}%");
-                });
+                $query->searchByTrigram($this->search);
             }
 
             if ($this->category) {
@@ -135,7 +131,7 @@ class Catalog extends Component
             match ($this->sort) {
                 'alpha'   => $query->orderBy('title', 'asc'),
                 'popular' => $query->orderByDesc('downloads_count'),
-                default   => $query->latest(),
+                default   => !empty($this->search) ? $query->orderByDesc('relevance_score')->latest() : $query->latest(),
             };
 
             $books = $query->paginate(15)->fragment('catalogue');

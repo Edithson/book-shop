@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use App\Models\Download;
+use App\Traits\SearchableByTrigram;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    use SearchableByTrigram;
     protected $fillable = [
         'title',
         'slug',
