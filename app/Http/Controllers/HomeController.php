@@ -213,7 +213,8 @@ class HomeController extends Controller
         if (!file_exists($previewPath)) {
             $status = -1;
             if (function_exists('exec')) {
-                $cmd = "gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=1 -dLastPage=5 -sOutputFile=" . escapeshellarg($previewPath) . " " . escapeshellarg($inputPath);
+               $cmd = "/usr/bin/gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=1 -dLastPage=5 -sOutputFile=" . escapeshellarg($previewPath) . " " . escapeshellarg($inputPath) . " 2>&1";
+		// $cmd = "gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=1 -dLastPage=5 -sOutputFile=" . escapeshellarg($previewPath) . " " . escapeshellarg($inputPath);
                 @exec($cmd, $output, $status);
             }
 
