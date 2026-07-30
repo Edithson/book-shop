@@ -7,6 +7,8 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Models\Book;
 
+// Commande artisan de lancement : php artisan sitemap:generate
+
 class GenerateSitemap extends Command
 {
     /**
