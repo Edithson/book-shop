@@ -19,9 +19,9 @@ class ImportZeroLibBooks extends Command
     {
         // --- CONFIGURATION DES CHEMINS ---
         // Le dossier racine où se trouvent tes résultats d'extraction Python
-        $basePath = "/home/edithson/Téléchargements/Le_site_du_zero/00_Extraction_Resultats";
-        $jsonPath = $basePath . "/creative_commons_books_final.json";
-        $pdfFolder = "/home/edithson/Téléchargements/Le_site_du_zero"; // Dossier source des PDF
+        $basePath = "/home/edithson/Téléchargements/zero lib/livres/01_Extraction_Resultats/";
+        $jsonPath = $basePath . "/creative_commons_books.json";
+        $pdfFolder = "/home/edithson/Téléchargements/zero lib/livres/"; // Dossier source des PDF
         $coversFolder = $basePath . "/covers";
 
         if (!File::exists($jsonPath)) {
@@ -74,15 +74,15 @@ class ImportZeroLibBooks extends Command
             Book::updateOrCreate(
                 ['title' => $data['title']], // Clé de vérification unique
                 [
-                    // 'author'       => $data['author'],
+                    'author'       => $data['author'],
                     'description'  => $data['description'],
-                    // 'category_id'  => $categoryId,
-                    // 'nbr_pages'    => $data['nbr_pages'],
-                    // 'cover_path'   => $coverDestinationPath,
-                    // 'file_path'    => $pdfDestinationPath,
-                    // 'price'        => 0, // Gratuit par défaut
-                    // 'publish_year' => $data['publish_year'] ?? date('Y'),
-                    // 'is_published' => true,
+                    'category_id'  => $categoryId,
+                    'nbr_pages'    => $data['nbr_pages'],
+                    'cover_path'   => $coverDestinationPath,
+                    'file_path'    => $pdfDestinationPath,
+                    'price'        => 0, // Gratuit par défaut
+                    'publish_year' => $data['publish_year'] ?? date('Y'),
+                    'is_published' => false,
                 ]
             );
 
