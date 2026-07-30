@@ -1,2386 +1,2386 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-    <loc>http://localhost:8000</loc>
+    <loc>https://zerolib.org</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/about</loc>
+    <loc>https://zerolib.org/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/contact</loc>
+    <loc>https://zerolib.org/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/maitriser-laravel-12-et-volt</loc>
+    <loc>https://zerolib.org/books/maitriser-laravel-12-et-volt</loc>
     <lastmod>2026-05-11T11:33:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-guide-du-developpeur-freelance</loc>
+    <loc>https://zerolib.org/books/le-guide-du-developpeur-freelance</loc>
     <lastmod>2026-05-11T11:33:35+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/design-uiux-avec-tailwindcss</loc>
+    <loc>https://zerolib.org/books/design-uiux-avec-tailwindcss</loc>
     <lastmod>2026-05-11T11:33:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/java-par-la-pratique</loc>
+    <loc>https://zerolib.org/books/java-par-la-pratique</loc>
     <lastmod>2026-04-21T02:02:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/tout-savoir-sur-python</loc>
+    <loc>https://zerolib.org/books/tout-savoir-sur-python</loc>
     <lastmod>2026-05-11T13:59:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/rediger-correctement-un-cahier-des-charges</loc>
+    <loc>https://zerolib.org/books/rediger-correctement-un-cahier-des-charges</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faire-de-son-programme-un-logiciel-libre</loc>
+    <loc>https://zerolib.org/books/faire-de-son-programme-un-logiciel-libre</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-pour-windows-8-en-html-et-javascript</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-pour-windows-8-en-html-et-javascript</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/concevez-votre-site-web-avec-php-et-mysql</loc>
+    <loc>https://zerolib.org/books/concevez-votre-site-web-avec-php-et-mysql</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/centrer-en-css</loc>
+    <loc>https://zerolib.org/books/centrer-en-css</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/ameliorez-la-visibilite-de-votre-site-grace-au-referencement</loc>
+    <loc>https://zerolib.org/books/ameliorez-la-visibilite-de-votre-site-grace-au-referencement</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-applications-web-avec-javafx</loc>
+    <loc>https://zerolib.org/books/les-applications-web-avec-javafx</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/pdo-comprendre-et-corriger-les-erreurs-les-plus-frequentes</loc>
+    <loc>https://zerolib.org/books/pdo-comprendre-et-corriger-les-erreurs-les-plus-frequentes</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-python</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-python</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/poursuite-detudes-apres-un-dut</loc>
+    <loc>https://zerolib.org/books/poursuite-detudes-apres-un-dut</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/choisir-les-bons-types-de-colonne-sql</loc>
+    <loc>https://zerolib.org/books/choisir-les-bons-types-de-colonne-sql</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mettre-des-pc-en-reseau</loc>
+    <loc>https://zerolib.org/books/mettre-des-pc-en-reseau</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-pour-iphone-ipad-et-ipod-touch</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-pour-iphone-ipad-et-ipod-touch</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-creer-votre-site-web-avec-html5-et-css3</loc>
+    <loc>https://zerolib.org/books/apprenez-a-creer-votre-site-web-avec-html5-et-css3</loc>
     <lastmod>2026-05-12T12:51:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-espace-membre-pour-son-site</loc>
+    <loc>https://zerolib.org/books/creer-un-espace-membre-pour-son-site</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comment-creer-un-jeu-video</loc>
+    <loc>https://zerolib.org/books/comment-creer-un-jeu-video</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-votre-propre-package</loc>
+    <loc>https://zerolib.org/books/creez-votre-propre-package</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/tp-pendu</loc>
+    <loc>https://zerolib.org/books/tp-pendu</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/jquery-dynamisez-vos-pages-plus-simplement</loc>
+    <loc>https://zerolib.org/books/jquery-dynamisez-vos-pages-plus-simplement</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmez-en-oriente-objet-en-php</loc>
+    <loc>https://zerolib.org/books/programmez-en-oriente-objet-en-php</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/css-les-compteurs</loc>
+    <loc>https://zerolib.org/books/css-les-compteurs</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-balise-canvas-avec-javascript</loc>
+    <loc>https://zerolib.org/books/la-balise-canvas-avec-javascript</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-javascript-moderne</loc>
+    <loc>https://zerolib.org/books/le-javascript-moderne</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/sql-selection-multi-tables</loc>
+    <loc>https://zerolib.org/books/sql-selection-multi-tables</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/analysez-des-donnees-avec-excel</loc>
+    <loc>https://zerolib.org/books/analysez-des-donnees-avec-excel</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/stop-aux-pourriels-spams</loc>
+    <loc>https://zerolib.org/books/stop-aux-pourriels-spams</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/maitrisez-les-bases-de-donnees-avec-qtsql</loc>
+    <loc>https://zerolib.org/books/maitrisez-les-bases-de-donnees-avec-qtsql</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-espaces-de-noms-en-php</loc>
+    <loc>https://zerolib.org/books/les-espaces-de-noms-en-php</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/simplifiez-vous-la-vie-avec-less</loc>
+    <loc>https://zerolib.org/books/simplifiez-vous-la-vie-avec-less</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comment-contribuer-a-un-projet-libre-sans-ecrire-une-ligne-de-code</loc>
+    <loc>https://zerolib.org/books/comment-contribuer-a-un-projet-libre-sans-ecrire-une-ligne-de-code</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-le-fonctionnement-des-reseaux-tcpip</loc>
+    <loc>https://zerolib.org/books/apprenez-le-fonctionnement-des-reseaux-tcpip</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-mini-rpg-en-javascript-avec-canvas</loc>
+    <loc>https://zerolib.org/books/creer-un-mini-rpg-en-javascript-avec-canvas</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/des-applications-ultra-rapides-avec-nodejs</loc>
+    <loc>https://zerolib.org/books/des-applications-ultra-rapides-avec-nodejs</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-livre-dor</loc>
+    <loc>https://zerolib.org/books/un-livre-dor</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/votre-site-php-presque-complet-architecture-mvc-et-bonnes-pratiques</loc>
+    <loc>https://zerolib.org/books/votre-site-php-presque-complet-architecture-mvc-et-bonnes-pratiques</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/modelisation-par-revolution</loc>
+    <loc>https://zerolib.org/books/modelisation-par-revolution</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-son-forum-de-toutes-pieces</loc>
+    <loc>https://zerolib.org/books/creer-son-forum-de-toutes-pieces</loc>
     <lastmod>2026-07-29T09:52:53+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-gestion-des-erreurs-et-des-problemes-html</loc>
+    <loc>https://zerolib.org/books/la-gestion-des-erreurs-et-des-problemes-html</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-votre-menu-interactif-en-images-en-htmlcss</loc>
+    <loc>https://zerolib.org/books/creez-votre-menu-interactif-en-images-en-htmlcss</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-linjection-de-dependances-en-php</loc>
+    <loc>https://zerolib.org/books/introduction-a-linjection-de-dependances-en-php</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/adopter-un-style-de-programmation-clair-avec-le-modele-mvc</loc>
+    <loc>https://zerolib.org/books/adopter-un-style-de-programmation-clair-avec-le-modele-mvc</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/propulsez-votre-site-avec-wordpress</loc>
+    <loc>https://zerolib.org/books/propulsez-votre-site-avec-wordpress</loc>
     <lastmod>2026-05-12T12:51:21+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/triggers-et-vues-materialisees-mysql</loc>
+    <loc>https://zerolib.org/books/triggers-et-vues-materialisees-mysql</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/atomik-framework-un-framework-php-simple-et-leger</loc>
+    <loc>https://zerolib.org/books/atomik-framework-un-framework-php-simple-et-leger</loc>
     <lastmod>2026-05-12T12:51:21+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comment-faire-une-page-ayant-la-meme-hauteur-que-le-navigateur</loc>
+    <loc>https://zerolib.org/books/comment-faire-une-page-ayant-la-meme-hauteur-que-le-navigateur</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/calcul-dune-expression-mathematique</loc>
+    <loc>https://zerolib.org/books/calcul-dune-expression-mathematique</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/jquery-ecrivez-moins-pour-faire-plus</loc>
+    <loc>https://zerolib.org/books/jquery-ecrivez-moins-pour-faire-plus</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-compte-a-rebours-en-php</loc>
+    <loc>https://zerolib.org/books/un-compte-a-rebours-en-php</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/simplifiez-vos-developpements-javascript-avec-jquery</loc>
+    <loc>https://zerolib.org/books/simplifiez-vos-developpements-javascript-avec-jquery</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/decouvrez-la-puissance-de-jquery-ui</loc>
+    <loc>https://zerolib.org/books/decouvrez-la-puissance-de-jquery-ui</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-java</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-java</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/autour-de-la-fonction-exponentielle-et-ses-constructions</loc>
+    <loc>https://zerolib.org/books/autour-de-la-fonction-exponentielle-et-ses-constructions</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-menu-circulaire</loc>
+    <loc>https://zerolib.org/books/creer-un-menu-circulaire</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utiliser-lapi-mysql-dans-vos-programmes</loc>
+    <loc>https://zerolib.org/books/utiliser-lapi-mysql-dans-vos-programmes</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-petit-montage-avec-windows-movie-maker</loc>
+    <loc>https://zerolib.org/books/creer-un-petit-montage-avec-windows-movie-maker</loc>
     <lastmod>2026-05-12T12:51:22+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/animez-votre-site-avec-css3</loc>
+    <loc>https://zerolib.org/books/animez-votre-site-avec-css3</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/bien-utiliser-les-sprites-css</loc>
+    <loc>https://zerolib.org/books/bien-utiliser-les-sprites-css</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/register-globals-et-ecrasement-de-donnees</loc>
+    <loc>https://zerolib.org/books/register-globals-et-ecrasement-de-donnees</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-referencement-de-son-site-web</loc>
+    <loc>https://zerolib.org/books/le-referencement-de-son-site-web</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/administrez-vos-bases-de-donnees-avec-mysql</loc>
+    <loc>https://zerolib.org/books/administrez-vos-bases-de-donnees-avec-mysql</loc>
     <lastmod>2026-07-29T09:53:08+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/adapter-son-site-au-format-mobile-avec-css3</loc>
+    <loc>https://zerolib.org/books/adapter-son-site-au-format-mobile-avec-css3</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/chiffrer-des-donnees-avec-truecrypt</loc>
+    <loc>https://zerolib.org/books/chiffrer-des-donnees-avec-truecrypt</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-votre-application-web-avec-java-ee</loc>
+    <loc>https://zerolib.org/books/creez-votre-application-web-avec-java-ee</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-menu-horizontal-deroulant-en-css</loc>
+    <loc>https://zerolib.org/books/creer-un-menu-horizontal-deroulant-en-css</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/generer-des-miniatures-de-pages-web-a-la-volee-sur-votre-serveur-web</loc>
+    <loc>https://zerolib.org/books/generer-des-miniatures-de-pages-web-a-la-volee-sur-votre-serveur-web</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/php5-comment-gerer-labsence-de-surcharge</loc>
+    <loc>https://zerolib.org/books/php5-comment-gerer-labsence-de-surcharge</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-la-logique-mathematique</loc>
+    <loc>https://zerolib.org/books/introduction-a-la-logique-mathematique</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-tests-unitaires-en-java</loc>
+    <loc>https://zerolib.org/books/les-tests-unitaires-en-java</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/des-statistiques-pour-votre-site</loc>
+    <loc>https://zerolib.org/books/des-statistiques-pour-votre-site</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comprendre-lusb-et-bricoler-un-peripherique</loc>
+    <loc>https://zerolib.org/books/comprendre-lusb-et-bricoler-un-peripherique</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-closures-en-javascript</loc>
+    <loc>https://zerolib.org/books/les-closures-en-javascript</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apostille-au-mvc-les-delegate</loc>
+    <loc>https://zerolib.org/books/apostille-au-mvc-les-delegate</loc>
     <lastmod>2026-07-29T09:53:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-maths-pour-tous</loc>
+    <loc>https://zerolib.org/books/les-maths-pour-tous</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/codeigniter-le-framework-au-service-des-zeros</loc>
+    <loc>https://zerolib.org/books/codeigniter-le-framework-au-service-des-zeros</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/structurez-vos-donnees-avec-xml</loc>
+    <loc>https://zerolib.org/books/structurez-vos-donnees-avec-xml</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/gerer-son-nom-de-domaine</loc>
+    <loc>https://zerolib.org/books/gerer-son-nom-de-domaine</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-blog-accessible-avec-html5</loc>
+    <loc>https://zerolib.org/books/creer-un-blog-accessible-avec-html5</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/upload-de-fichiers-par-formulaire</loc>
+    <loc>https://zerolib.org/books/upload-de-fichiers-par-formulaire</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-pour-android</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-pour-android</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/tours-de-magie-mathematiques</loc>
+    <loc>https://zerolib.org/books/tours-de-magie-mathematiques</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-noms-de-domaine</loc>
+    <loc>https://zerolib.org/books/les-noms-de-domaine</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/bonnes-pratiques-javascript</loc>
+    <loc>https://zerolib.org/books/bonnes-pratiques-javascript</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-livre-de-test</loc>
+    <loc>https://zerolib.org/books/le-livre-de-test</loc>
     <lastmod>2026-07-06T11:55:37+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/pygtk</loc>
+    <loc>https://zerolib.org/books/pygtk</loc>
     <lastmod>2026-07-29T09:52:53+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/animation-facile-les-blend-shapes</loc>
+    <loc>https://zerolib.org/books/animation-facile-les-blend-shapes</loc>
     <lastmod>2026-07-29T09:53:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/manier-la-trigonometrie</loc>
+    <loc>https://zerolib.org/books/manier-la-trigonometrie</loc>
     <lastmod>2026-07-29T09:53:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-pathfinding-avec-dijkstra</loc>
+    <loc>https://zerolib.org/books/le-pathfinding-avec-dijkstra</loc>
     <lastmod>2026-07-29T09:53:05+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utilisation-dun-moteur-de-templates-talus-tpl</loc>
+    <loc>https://zerolib.org/books/utilisation-dun-moteur-de-templates-talus-tpl</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utilisation-de-twig-un-moteur-de-templates</loc>
+    <loc>https://zerolib.org/books/utilisation-de-twig-un-moteur-de-templates</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/reprenez-le-controle-a-laide-de-linux</loc>
+    <loc>https://zerolib.org/books/reprenez-le-controle-a-laide-de-linux</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/allez-plus-loin-avec-les-variables</loc>
+    <loc>https://zerolib.org/books/allez-plus-loin-avec-les-variables</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lemulation-console</loc>
+    <loc>https://zerolib.org/books/lemulation-console</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-programmation-facile-avec-ada-95</loc>
+    <loc>https://zerolib.org/books/la-programmation-facile-avec-ada-95</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/enregistrer-et-lire-des-donnees-de-fichiers-ini</loc>
+    <loc>https://zerolib.org/books/enregistrer-et-lire-des-donnees-de-fichiers-ini</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-instruments-virtuels-avec-synthmaker</loc>
+    <loc>https://zerolib.org/books/creez-des-instruments-virtuels-avec-synthmaker</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-le-basic-casio</loc>
+    <loc>https://zerolib.org/books/apprenez-le-basic-casio</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/personnaliser-entierement-votre-windows-xp</loc>
+    <loc>https://zerolib.org/books/personnaliser-entierement-votre-windows-xp</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-pattern-decorator-en-python</loc>
+    <loc>https://zerolib.org/books/le-pattern-decorator-en-python</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lecture-et-ecriture-dans-les-fichiers-en-c</loc>
+    <loc>https://zerolib.org/books/lecture-et-ecriture-dans-les-fichiers-en-c</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/une-musique-professionnelle-avec-reason</loc>
+    <loc>https://zerolib.org/books/une-musique-professionnelle-avec-reason</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/rendus-optimises-dl-va-vbo</loc>
+    <loc>https://zerolib.org/books/rendus-optimises-dl-va-vbo</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utilisation-avancee-des-listes-en-python</loc>
+    <loc>https://zerolib.org/books/utilisation-avancee-des-listes-en-python</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lidle-port-scan</loc>
+    <loc>https://zerolib.org/books/lidle-port-scan</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-creer-avec-gimp-28</loc>
+    <loc>https://zerolib.org/books/apprenez-a-creer-avec-gimp-28</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-systeme-de-cache-simple</loc>
+    <loc>https://zerolib.org/books/un-systeme-de-cache-simple</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/rediger-en-japonais-avec-latex</loc>
+    <loc>https://zerolib.org/books/rediger-en-japonais-avec-latex</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/html5-web-workers-le-monde-parallele-du-javascript</loc>
+    <loc>https://zerolib.org/books/html5-web-workers-le-monde-parallele-du-javascript</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-redirection-http</loc>
+    <loc>https://zerolib.org/books/la-redirection-http</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/world-of-goo-la-creation-de-niveaux-avec-woogle</loc>
+    <loc>https://zerolib.org/books/world-of-goo-la-creation-de-niveaux-avec-woogle</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comment-utiliser-la-balise-math</loc>
+    <loc>https://zerolib.org/books/comment-utiliser-la-balise-math</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-2d-avec-sfml</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-2d-avec-sfml</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-votre-propre-plug-in-jquery</loc>
+    <loc>https://zerolib.org/books/developpez-votre-propre-plug-in-jquery</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-son-serveur-ftp</loc>
+    <loc>https://zerolib.org/books/creer-son-serveur-ftp</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/a-la-decouverte-de-laleatoire-et-des-probabilites</loc>
+    <loc>https://zerolib.org/books/a-la-decouverte-de-laleatoire-et-des-probabilites</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/gestion-de-verrou-mysql</loc>
+    <loc>https://zerolib.org/books/gestion-de-verrou-mysql</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-au-scan-de-ports</loc>
+    <loc>https://zerolib.org/books/introduction-au-scan-de-ports</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-des-bibliotheques-avec-codeblocks</loc>
+    <loc>https://zerolib.org/books/creer-des-bibliotheques-avec-codeblocks</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-et-modifier-le-menu-de-counter-strike-source-et-autres-jeux-valve</loc>
+    <loc>https://zerolib.org/books/creer-et-modifier-le-menu-de-counter-strike-source-et-autres-jeux-valve</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-une-icone-pour-son-programme</loc>
+    <loc>https://zerolib.org/books/creer-une-icone-pour-son-programme</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/laccessibilite-web</loc>
+    <loc>https://zerolib.org/books/laccessibilite-web</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/quest-ce-que-le-responsive-web-design</loc>
+    <loc>https://zerolib.org/books/quest-ce-que-le-responsive-web-design</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/empecher-le-telechargement-direct-de-fichiers</loc>
+    <loc>https://zerolib.org/books/empecher-le-telechargement-direct-de-fichiers</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/partitionner-son-disque-dur-sous-vista</loc>
+    <loc>https://zerolib.org/books/partitionner-son-disque-dur-sous-vista</loc>
     <lastmod>2026-07-29T09:53:06+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-conteneurs-de-la-stl</loc>
+    <loc>https://zerolib.org/books/les-conteneurs-de-la-stl</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-developper-en-c</loc>
+    <loc>https://zerolib.org/books/apprenez-a-developper-en-c</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/internet-et-les-navigateurs</loc>
+    <loc>https://zerolib.org/books/internet-et-les-navigateurs</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-des-jeux-textuels-avec-inform-7</loc>
+    <loc>https://zerolib.org/books/creer-des-jeux-textuels-avec-inform-7</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-aux-algorigrammes</loc>
+    <loc>https://zerolib.org/books/introduction-aux-algorigrammes</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/effectuez-vos-etudes-statistiques-avec-r</loc>
+    <loc>https://zerolib.org/books/effectuez-vos-etudes-statistiques-avec-r</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-tours-de-hanoi</loc>
+    <loc>https://zerolib.org/books/les-tours-de-hanoi</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-camera-mapping-avec-blender</loc>
+    <loc>https://zerolib.org/books/le-camera-mapping-avec-blender</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/construire-un-mode-ap-ar</loc>
+    <loc>https://zerolib.org/books/construire-un-mode-ap-ar</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-pour-windows-phone</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-pour-windows-phone</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-peu-de-physique-en-actionscript-3</loc>
+    <loc>https://zerolib.org/books/un-peu-de-physique-en-actionscript-3</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/c-bien-choisir-ses-structures-de-donnees</loc>
+    <loc>https://zerolib.org/books/c-bien-choisir-ses-structures-de-donnees</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-vos-applications-web-avec-symfony2</loc>
+    <loc>https://zerolib.org/books/developpez-vos-applications-web-avec-symfony2</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debutez-en-informatique-avec-windows-8</loc>
+    <loc>https://zerolib.org/books/debutez-en-informatique-avec-windows-8</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-framework-executor</loc>
+    <loc>https://zerolib.org/books/le-framework-executor</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/visual-c-utiliser-les-parametres-dapplication</loc>
+    <loc>https://zerolib.org/books/visual-c-utiliser-les-parametres-dapplication</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-systeme-doptions</loc>
+    <loc>https://zerolib.org/books/un-systeme-doptions</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/allocation-dynamique-en-c-complement</loc>
+    <loc>https://zerolib.org/books/allocation-dynamique-en-c-complement</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-bases-dexcel</loc>
+    <loc>https://zerolib.org/books/les-bases-dexcel</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-maps-pour-teeworlds</loc>
+    <loc>https://zerolib.org/books/creez-des-maps-pour-teeworlds</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-chimie-a-partir-de-zero</loc>
+    <loc>https://zerolib.org/books/la-chimie-a-partir-de-zero</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lumiere-sur-la-lumiere</loc>
+    <loc>https://zerolib.org/books/lumiere-sur-la-lumiere</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/pratiques-avancees-et-meconnues-en-python</loc>
+    <loc>https://zerolib.org/books/pratiques-avancees-et-meconnues-en-python</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/irssi-le-client-irc-du-futur</loc>
+    <loc>https://zerolib.org/books/irssi-le-client-irc-du-futur</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/tout-sur-lopensim</loc>
+    <loc>https://zerolib.org/books/tout-sur-lopensim</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/nous-descendons-tous-de-gengis-khan</loc>
+    <loc>https://zerolib.org/books/nous-descendons-tous-de-gengis-khan</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-c</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-c</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/c-les-manipulateurs-de-flux</loc>
+    <loc>https://zerolib.org/books/c-les-manipulateurs-de-flux</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lalgebre-de-boole</loc>
+    <loc>https://zerolib.org/books/lalgebre-de-boole</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/petit-guide-dutilisation-de-twitter</loc>
+    <loc>https://zerolib.org/books/petit-guide-dutilisation-de-twitter</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/choisissez-etou-fabriquez-votre-cable-rj45</loc>
+    <loc>https://zerolib.org/books/choisissez-etou-fabriquez-votre-cable-rj45</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/comprendre-la-messagerie-electronique</loc>
+    <loc>https://zerolib.org/books/comprendre-la-messagerie-electronique</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-ti-basic</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-ti-basic</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-la-programmation-fonctionnelle-avec-haskell</loc>
+    <loc>https://zerolib.org/books/apprenez-la-programmation-fonctionnelle-avec-haskell</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mise-en-place-des-serveurs-apache-et-dns</loc>
+    <loc>https://zerolib.org/books/mise-en-place-des-serveurs-apache-et-dns</loc>
     <lastmod>2026-07-29T09:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-actionscript-3</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-actionscript-3</loc>
     <lastmod>2026-07-29T09:53:08+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/pov-ray</loc>
+    <loc>https://zerolib.org/books/pov-ray</loc>
     <lastmod>2026-07-29T09:53:08+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmation-perl-modules-cpan</loc>
+    <loc>https://zerolib.org/books/programmation-perl-modules-cpan</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/installer-desinstaller-un-ou-plusieurs-gestionnaires-de-bureau-proprement-gnome-kde-xfce-etc</loc>
+    <loc>https://zerolib.org/books/installer-desinstaller-un-ou-plusieurs-gestionnaires-de-bureau-proprement-gnome-kde-xfce-etc</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/une-map-avec-hammer</loc>
+    <loc>https://zerolib.org/books/une-map-avec-hammer</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/menus-en-onglets</loc>
+    <loc>https://zerolib.org/books/menus-en-onglets</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/aidez-la-science-avec-folding-at-home</loc>
+    <loc>https://zerolib.org/books/aidez-la-science-avec-folding-at-home</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/synthese-sonore-avec-csound</loc>
+    <loc>https://zerolib.org/books/synthese-sonore-avec-csound</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-la-programmation-avec-scala</loc>
+    <loc>https://zerolib.org/books/apprenez-la-programmation-avec-scala</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/explorez-lespace-avec-celestia</loc>
+    <loc>https://zerolib.org/books/explorez-lespace-avec-celestia</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-systeme-de-micro-paiement-flattr</loc>
+    <loc>https://zerolib.org/books/le-systeme-de-micro-paiement-flattr</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utiliser-le-protocole-irc-avec-php</loc>
+    <loc>https://zerolib.org/books/utiliser-le-protocole-irc-avec-php</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmez-en-objective-c</loc>
+    <loc>https://zerolib.org/books/programmez-en-objective-c</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/installer-un-serveur-dns-avec-djbdns-sous-debian</loc>
+    <loc>https://zerolib.org/books/installer-un-serveur-dns-avec-djbdns-sous-debian</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/serialisation-avec-boost</loc>
+    <loc>https://zerolib.org/books/serialisation-avec-boost</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-vos-applications-web-avec-django</loc>
+    <loc>https://zerolib.org/books/developpez-vos-applications-web-avec-django</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-bookmarklets-ou-comment-modifier-la-page-dun-site-depuis-la-barre-dadresse</loc>
+    <loc>https://zerolib.org/books/les-bookmarklets-ou-comment-modifier-la-page-dun-site-depuis-la-barre-dadresse</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-vos-applications-3d-avec-opengl-33</loc>
+    <loc>https://zerolib.org/books/developpez-vos-applications-3d-avec-opengl-33</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-requetes-http</loc>
+    <loc>https://zerolib.org/books/les-requetes-http</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/presentation-de-bibliotheque-sdl-en-java</loc>
+    <loc>https://zerolib.org/books/presentation-de-bibliotheque-sdl-en-java</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-typage-presentation-thematique-et-historique</loc>
+    <loc>https://zerolib.org/books/le-typage-presentation-thematique-et-historique</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mecanique-de-zero</loc>
+    <loc>https://zerolib.org/books/mecanique-de-zero</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/hebergez-vos-projets-web-dans-le-cloud-avec-windows-azure</loc>
+    <loc>https://zerolib.org/books/hebergez-vos-projets-web-dans-le-cloud-avec-windows-azure</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-images-en-3d</loc>
+    <loc>https://zerolib.org/books/les-images-en-3d</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-vos-diaporamas-en-latex-avec-beamer</loc>
+    <loc>https://zerolib.org/books/creez-vos-diaporamas-en-latex-avec-beamer</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-verite-sur-les-tableaux-et-pointeurs-en-c</loc>
+    <loc>https://zerolib.org/books/la-verite-sur-les-tableaux-et-pointeurs-en-c</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utilisez-macports</loc>
+    <loc>https://zerolib.org/books/utilisez-macports</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debutez-dans-la-3d-avec-blender</loc>
+    <loc>https://zerolib.org/books/debutez-dans-la-3d-avec-blender</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-saisie-securisee-avec-scanf</loc>
+    <loc>https://zerolib.org/books/la-saisie-securisee-avec-scanf</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-backtracking-par-lexemple-resoudre-un-sudoku</loc>
+    <loc>https://zerolib.org/books/le-backtracking-par-lexemple-resoudre-un-sudoku</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/sensibilisation-sur-le-choix-dun-mot-de-passe</loc>
+    <loc>https://zerolib.org/books/sensibilisation-sur-le-choix-dun-mot-de-passe</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/parcourir-les-dossiers-avec-direnth</loc>
+    <loc>https://zerolib.org/books/parcourir-les-dossiers-avec-direnth</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-dimensions-en-geometrie</loc>
+    <loc>https://zerolib.org/books/les-dimensions-en-geometrie</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/presentez-des-diaporamas-avec-powerpoint</loc>
+    <loc>https://zerolib.org/books/presentez-des-diaporamas-avec-powerpoint</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-utiliser-solidworks</loc>
+    <loc>https://zerolib.org/books/apprenez-a-utiliser-solidworks</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mettez-des-accents-dans-vos-programmes-avec-le-type-wchar-t</loc>
+    <loc>https://zerolib.org/books/mettez-des-accents-dans-vos-programmes-avec-le-type-wchar-t</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/dynamisez-vos-sites-web-avec-javascript</loc>
+    <loc>https://zerolib.org/books/dynamisez-vos-sites-web-avec-javascript</loc>
     <lastmod>2026-07-29T09:53:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-cryptographie-asymetrique-rsa</loc>
+    <loc>https://zerolib.org/books/la-cryptographie-asymetrique-rsa</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/qt-quelques-fonctionnalites-non-gui</loc>
+    <loc>https://zerolib.org/books/qt-quelques-fonctionnalites-non-gui</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-une-userbar-avec-gimp</loc>
+    <loc>https://zerolib.org/books/creer-une-userbar-avec-gimp</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/redigez-en-markdown</loc>
+    <loc>https://zerolib.org/books/redigez-en-markdown</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-gestion-des-erreurs-en-c</loc>
+    <loc>https://zerolib.org/books/la-gestion-des-erreurs-en-c</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/google-maps-javascript-api-v3</loc>
+    <loc>https://zerolib.org/books/google-maps-javascript-api-v3</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/site-epingle-avec-internet-explorer</loc>
+    <loc>https://zerolib.org/books/site-epingle-avec-internet-explorer</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-la-vision-par-ordinateur</loc>
+    <loc>https://zerolib.org/books/introduction-a-la-vision-par-ordinateur</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-la-logique-floue</loc>
+    <loc>https://zerolib.org/books/introduction-a-la-logique-floue</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-des-gif-animes</loc>
+    <loc>https://zerolib.org/books/creer-des-gif-animes</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/ajouter-une-ville-et-une-region-a-medieval-ii-total-war</loc>
+    <loc>https://zerolib.org/books/ajouter-une-ville-et-une-region-a-medieval-ii-total-war</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-menu-horizontal</loc>
+    <loc>https://zerolib.org/books/un-menu-horizontal</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lecture-et-ecriture-de-fichiers-en-mode-binaire</loc>
+    <loc>https://zerolib.org/books/lecture-et-ecriture-de-fichiers-en-mode-binaire</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmation-objet-avancee-la-conception-avant-tout-design-patterns-a-lemploi</loc>
+    <loc>https://zerolib.org/books/programmation-objet-avancee-la-conception-avant-tout-design-patterns-a-lemploi</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/c-deboguer-avec-codeblocks</loc>
+    <loc>https://zerolib.org/books/c-deboguer-avec-codeblocks</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-depot-launchpad</loc>
+    <loc>https://zerolib.org/books/creer-un-depot-launchpad</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/initiation-a-la-creation-dun-design-extensible</loc>
+    <loc>https://zerolib.org/books/initiation-a-la-creation-dun-design-extensible</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-acides-amines</loc>
+    <loc>https://zerolib.org/books/les-acides-amines</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mise-en-page-avec-indesign</loc>
+    <loc>https://zerolib.org/books/mise-en-page-avec-indesign</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-reconnaissance-vocale-dans-son-application</loc>
+    <loc>https://zerolib.org/books/la-reconnaissance-vocale-dans-son-application</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faites-parler-vos-applications-en-net</loc>
+    <loc>https://zerolib.org/books/faites-parler-vos-applications-en-net</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-vos-applications-web-avec-flask</loc>
+    <loc>https://zerolib.org/books/creez-vos-applications-web-avec-flask</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-calculs-en-binaire</loc>
+    <loc>https://zerolib.org/books/les-calculs-en-binaire</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debuguer-facilement-avec-valgrind</loc>
+    <loc>https://zerolib.org/books/debuguer-facilement-avec-valgrind</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mozilla-thunderbird</loc>
+    <loc>https://zerolib.org/books/mozilla-thunderbird</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-guide-du-contributeur</loc>
+    <loc>https://zerolib.org/books/le-guide-du-contributeur</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/traitez-des-textes-avec-word</loc>
+    <loc>https://zerolib.org/books/traitez-des-textes-avec-word</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/compilation-a-la-volee-avec-libtcc</loc>
+    <loc>https://zerolib.org/books/compilation-a-la-volee-avec-libtcc</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-gestion-du-joystick-avec-la-sdl</loc>
+    <loc>https://zerolib.org/books/la-gestion-du-joystick-avec-la-sdl</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-tri-rapide-qsort</loc>
+    <loc>https://zerolib.org/books/le-tri-rapide-qsort</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-gui-avec-qt-la-suite</loc>
+    <loc>https://zerolib.org/books/le-gui-avec-qt-la-suite</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-displacements-techniques-avancees</loc>
+    <loc>https://zerolib.org/books/les-displacements-techniques-avancees</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/manipulez-les-paquets-reseau-avec-scapy</loc>
+    <loc>https://zerolib.org/books/manipulez-les-paquets-reseau-avec-scapy</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/gerer-vos-projets-avec-mercurial</loc>
+    <loc>https://zerolib.org/books/gerer-vos-projets-avec-mercurial</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/foncteurs-et-iterateurs</loc>
+    <loc>https://zerolib.org/books/foncteurs-et-iterateurs</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-cryptographie-facile-avec-pgp</loc>
+    <loc>https://zerolib.org/books/la-cryptographie-facile-avec-pgp</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-chmod</loc>
+    <loc>https://zerolib.org/books/les-chmod</loc>
     <lastmod>2026-07-29T09:53:13+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/decouverte-de-la-programmation-par-contraintes</loc>
+    <loc>https://zerolib.org/books/decouverte-de-la-programmation-par-contraintes</loc>
     <lastmod>2026-07-29T09:53:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-tri-par-tas</loc>
+    <loc>https://zerolib.org/books/le-tri-par-tas</loc>
     <lastmod>2026-07-29T09:53:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/inscrivez-et-connectez-vos-membres-en-un-clic</loc>
+    <loc>https://zerolib.org/books/inscrivez-et-connectez-vos-membres-en-un-clic</loc>
     <lastmod>2026-07-29T09:53:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-serveur-subversion</loc>
+    <loc>https://zerolib.org/books/creer-un-serveur-subversion</loc>
     <lastmod>2026-07-29T09:53:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/dissimuler-un-texte-dans-une-image</loc>
+    <loc>https://zerolib.org/books/dissimuler-un-texte-dans-une-image</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/mise-en-place-dun-serveur-dhcp-sous-linux</loc>
+    <loc>https://zerolib.org/books/mise-en-place-dun-serveur-dhcp-sous-linux</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/indefero-un-bug-tracker-tres-complet</loc>
+    <loc>https://zerolib.org/books/indefero-un-bug-tracker-tres-complet</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-colorier-avec-the-gimp</loc>
+    <loc>https://zerolib.org/books/apprenez-a-colorier-avec-the-gimp</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/bruit-de-perlin</loc>
+    <loc>https://zerolib.org/books/bruit-de-perlin</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-programmation-avec-autoit</loc>
+    <loc>https://zerolib.org/books/la-programmation-avec-autoit</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/modifier-lapparence-dune-infobulle</loc>
+    <loc>https://zerolib.org/books/modifier-lapparence-dune-infobulle</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/tableaux-pointeurs-et-allocation-dynamique</loc>
+    <loc>https://zerolib.org/books/tableaux-pointeurs-et-allocation-dynamique</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/decouvrir-et-configurer-le-protocole-sftp-avec-mysecureshell</loc>
+    <loc>https://zerolib.org/books/decouvrir-et-configurer-le-protocole-sftp-avec-mysecureshell</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/redigez-des-documents-de-qualite-avec-latex</loc>
+    <loc>https://zerolib.org/books/redigez-des-documents-de-qualite-avec-latex</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/qt-creation-de-plugins</loc>
+    <loc>https://zerolib.org/books/qt-creation-de-plugins</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-des-jeux-en-2d-avec-construct</loc>
+    <loc>https://zerolib.org/books/developpez-des-jeux-en-2d-avec-construct</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-acl-access-control-lists-sous-linux</loc>
+    <loc>https://zerolib.org/books/les-acl-access-control-lists-sous-linux</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/gerez-vos-projets-a-laide-du-gestionnaire-de-versions-subversion</loc>
+    <loc>https://zerolib.org/books/gerez-vos-projets-a-laide-du-gestionnaire-de-versions-subversion</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debutez-en-informatique-avec-windows-7</loc>
+    <loc>https://zerolib.org/books/debutez-en-informatique-avec-windows-7</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-au-dialogue-entre-ocaml-et-le-c</loc>
+    <loc>https://zerolib.org/books/introduction-au-dialogue-entre-ocaml-et-le-c</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/3ds-max-pour-les-zeros</loc>
+    <loc>https://zerolib.org/books/3ds-max-pour-les-zeros</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/decouvrez-ogre-3d</loc>
+    <loc>https://zerolib.org/books/decouvrez-ogre-3d</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-multiboot-sous-gnulinux</loc>
+    <loc>https://zerolib.org/books/le-multiboot-sous-gnulinux</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developper-son-propre-controle-utilisateur-winforms</loc>
+    <loc>https://zerolib.org/books/developper-son-propre-controle-utilisateur-winforms</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/realisez-votre-jeu-video-avec-udk</loc>
+    <loc>https://zerolib.org/books/realisez-votre-jeu-video-avec-udk</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-la-sculpture-digitale-avec-pixologic-zbrush</loc>
+    <loc>https://zerolib.org/books/apprenez-la-sculpture-digitale-avec-pixologic-zbrush</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/affichez-le-nombre-de-visiteurs-connectes</loc>
+    <loc>https://zerolib.org/books/affichez-le-nombre-de-visiteurs-connectes</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/algorithmique-pour-lapprenti-programmeur</loc>
+    <loc>https://zerolib.org/books/algorithmique-pour-lapprenti-programmeur</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmer-un-bot-irc-simplement-avec-ircbot</loc>
+    <loc>https://zerolib.org/books/programmer-un-bot-irc-simplement-avec-ircbot</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utiliser-qt-avec-visual-studio-2010</loc>
+    <loc>https://zerolib.org/books/utiliser-qt-avec-visual-studio-2010</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/maitriser-loutil-plume-et-les-traces</loc>
+    <loc>https://zerolib.org/books/maitriser-loutil-plume-et-les-traces</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/montez-votre-site-dans-le-cloud-avec-google-app-engine</loc>
+    <loc>https://zerolib.org/books/montez-votre-site-dans-le-cloud-avec-google-app-engine</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lelectronique-de-zero</loc>
+    <loc>https://zerolib.org/books/lelectronique-de-zero</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-tri-a-paniers</loc>
+    <loc>https://zerolib.org/books/le-tri-a-paniers</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faire-une-image-anti-robots-ou-captcha-facilement</loc>
+    <loc>https://zerolib.org/books/faire-une-image-anti-robots-ou-captcha-facilement</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-des-documents-avec-txt2tags</loc>
+    <loc>https://zerolib.org/books/creer-des-documents-avec-txt2tags</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-des-applications-en-c-pour-windows-phone-8</loc>
+    <loc>https://zerolib.org/books/creez-des-applications-en-c-pour-windows-phone-8</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-votre-site-web-avec-le-framework-django</loc>
+    <loc>https://zerolib.org/books/developpez-votre-site-web-avec-le-framework-django</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/des-news-sur-votre-site</loc>
+    <loc>https://zerolib.org/books/des-news-sur-votre-site</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/connaitre-et-monter-son-pc</loc>
+    <loc>https://zerolib.org/books/connaitre-et-monter-son-pc</loc>
     <lastmod>2026-07-29T09:53:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/une-zform-avec-mootools</loc>
+    <loc>https://zerolib.org/books/une-zform-avec-mootools</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-programmation-reseau-en-net</loc>
+    <loc>https://zerolib.org/books/la-programmation-reseau-en-net</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-vyatta</loc>
+    <loc>https://zerolib.org/books/introduction-a-vyatta</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/maitrisez-la-2d-avec-photoshop</loc>
+    <loc>https://zerolib.org/books/maitrisez-la-2d-avec-photoshop</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/choisir-une-licence-pour-son-tutoriel</loc>
+    <loc>https://zerolib.org/books/choisir-une-licence-pour-son-tutoriel</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprendre-a-dessiner-en-3d-avec-autocad</loc>
+    <loc>https://zerolib.org/books/apprendre-a-dessiner-en-3d-avec-autocad</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-geometrie-plane</loc>
+    <loc>https://zerolib.org/books/la-geometrie-plane</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-systeme-de-news-sans-base-de-donnees-grace-a-serialize-et-unserialize</loc>
+    <loc>https://zerolib.org/books/un-systeme-de-news-sans-base-de-donnees-grace-a-serialize-et-unserialize</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/securisez-vos-mots-de-passe-avec-lastpass</loc>
+    <loc>https://zerolib.org/books/securisez-vos-mots-de-passe-avec-lastpass</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/deployez-vos-projets-web-facilement-avec-webmatrix</loc>
+    <loc>https://zerolib.org/books/deployez-vos-projets-web-facilement-avec-webmatrix</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpez-votre-site-web-avec-le-framework-symfony2</loc>
+    <loc>https://zerolib.org/books/developpez-votre-site-web-avec-le-framework-symfony2</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/executer-des-fonctions-mathematiques-avec-grapher</loc>
+    <loc>https://zerolib.org/books/executer-des-fonctions-mathematiques-avec-grapher</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-programmation-scientifique-avec-python</loc>
+    <loc>https://zerolib.org/books/la-programmation-scientifique-avec-python</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/des-widgets-en-3d-avec-qt</loc>
+    <loc>https://zerolib.org/books/des-widgets-en-3d-avec-qt</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/ocaml-les-flots-de-donnees</loc>
+    <loc>https://zerolib.org/books/ocaml-les-flots-de-donnees</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/passer-du-latin1-a-lunicode</loc>
+    <loc>https://zerolib.org/books/passer-du-latin1-a-lunicode</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/aligner-ses-formulaires-sans-tableaux</loc>
+    <loc>https://zerolib.org/books/aligner-ses-formulaires-sans-tableaux</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debugger-avec-qt</loc>
+    <loc>https://zerolib.org/books/debugger-avec-qt</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faire-un-demon-sous-linux</loc>
+    <loc>https://zerolib.org/books/faire-un-demon-sous-linux</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/du-decimal-au-binaire</loc>
+    <loc>https://zerolib.org/books/du-decimal-au-binaire</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/installer-un-reseau-wi-fi-sur-ubuntu-et-derives</loc>
+    <loc>https://zerolib.org/books/installer-un-reseau-wi-fi-sur-ubuntu-et-derives</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/acces-securise-a-des-documents</loc>
+    <loc>https://zerolib.org/books/acces-securise-a-des-documents</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-arbres-de-galton-watson</loc>
+    <loc>https://zerolib.org/books/les-arbres-de-galton-watson</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developpement-c-net</loc>
+    <loc>https://zerolib.org/books/developpement-c-net</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/geolocalisez-vos-visiteurs-grace-a-leur-ip</loc>
+    <loc>https://zerolib.org/books/geolocalisez-vos-visiteurs-grace-a-leur-ip</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-tri-a-bulles</loc>
+    <loc>https://zerolib.org/books/le-tri-a-bulles</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debusquer-et-apprivoiser-les-bugsen-c</loc>
+    <loc>https://zerolib.org/books/debusquer-et-apprivoiser-les-bugsen-c</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/space-art-sur-photoshop</loc>
+    <loc>https://zerolib.org/books/space-art-sur-photoshop</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/developper-sur-microsoft-surface</loc>
+    <loc>https://zerolib.org/books/developper-sur-microsoft-surface</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/c-maitriser-le-compilateur-g</loc>
+    <loc>https://zerolib.org/books/c-maitriser-le-compilateur-g</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-shaders-en-glsl</loc>
+    <loc>https://zerolib.org/books/les-shaders-en-glsl</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debuter-dans-linfographie-avec-gimp</loc>
+    <loc>https://zerolib.org/books/debuter-dans-linfographie-avec-gimp</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debuter-sur-adobe-photoshop</loc>
+    <loc>https://zerolib.org/books/debuter-sur-adobe-photoshop</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/de-la-musique-avec-caml</loc>
+    <loc>https://zerolib.org/books/de-la-musique-avec-caml</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lorthotypographie-bien-ecrire-pour-bien-etre-lu</loc>
+    <loc>https://zerolib.org/books/lorthotypographie-bien-ecrire-pour-bien-etre-lu</loc>
     <lastmod>2026-07-29T09:53:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-ledition-de-texte-avancee-lexemple-de-gnu-nano</loc>
+    <loc>https://zerolib.org/books/introduction-a-ledition-de-texte-avancee-lexemple-de-gnu-nano</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmez-sur-votre-ds-avec-microlua</loc>
+    <loc>https://zerolib.org/books/programmez-sur-votre-ds-avec-microlua</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/unity3d-creation-dun-menu-avec-curseur-personnalise</loc>
+    <loc>https://zerolib.org/books/unity3d-creation-dun-menu-avec-curseur-personnalise</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-captchas-anti-bot</loc>
+    <loc>https://zerolib.org/books/les-captchas-anti-bot</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-animations-optimisees-avec-sdl</loc>
+    <loc>https://zerolib.org/books/les-animations-optimisees-avec-sdl</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/securiser-son-serveur-linux</loc>
+    <loc>https://zerolib.org/books/securiser-son-serveur-linux</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/realisation-dun-overview</loc>
+    <loc>https://zerolib.org/books/realisation-dun-overview</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-representation-intervallaire</loc>
+    <loc>https://zerolib.org/books/la-representation-intervallaire</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/rpg-maker-xp</loc>
+    <loc>https://zerolib.org/books/rpg-maker-xp</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/realiser-un-triple-boot-sur-un-macbook-pro-8</loc>
+    <loc>https://zerolib.org/books/realiser-un-triple-boot-sur-un-macbook-pro-8</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprendre-a-utiliser-doctrine</loc>
+    <loc>https://zerolib.org/books/apprendre-a-utiliser-doctrine</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/a-la-decouverte-dunix-freebsd</loc>
+    <loc>https://zerolib.org/books/a-la-decouverte-dunix-freebsd</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/redigez-facilement-des-documents-avec-word</loc>
+    <loc>https://zerolib.org/books/redigez-facilement-des-documents-avec-word</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/utiliser-la-zone-de-notifications</loc>
+    <loc>https://zerolib.org/books/utiliser-la-zone-de-notifications</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/bruits-et-nombres-aleatoires-coherents</loc>
+    <loc>https://zerolib.org/books/bruits-et-nombres-aleatoires-coherents</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-la-programmation-dynamique</loc>
+    <loc>https://zerolib.org/books/introduction-a-la-programmation-dynamique</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-facilement-des-montages-video-sous-linux-avec-openshot</loc>
+    <loc>https://zerolib.org/books/creez-facilement-des-montages-video-sous-linux-avec-openshot</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-monter-votre-ordinateur</loc>
+    <loc>https://zerolib.org/books/apprenez-a-monter-votre-ordinateur</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/interagir-avec-le-serveur-ftp</loc>
+    <loc>https://zerolib.org/books/interagir-avec-le-serveur-ftp</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/empecher-le-telechargement-direct-de-fichiers-multimedia</loc>
+    <loc>https://zerolib.org/books/empecher-le-telechargement-direct-de-fichiers-multimedia</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/recreez-le-style-daero-avec-the-gimp</loc>
+    <loc>https://zerolib.org/books/recreez-le-style-daero-avec-the-gimp</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-tri-par-selection</loc>
+    <loc>https://zerolib.org/books/le-tri-par-selection</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-anti-brute-force-leger-et-rapide</loc>
+    <loc>https://zerolib.org/books/un-anti-brute-force-leger-et-rapide</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/stylisez-votre-site-avec-css3</loc>
+    <loc>https://zerolib.org/books/stylisez-votre-site-avec-css3</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-services-web</loc>
+    <loc>https://zerolib.org/books/les-services-web</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/desinstaller-gnulinux-et-ne-garder-que-windows</loc>
+    <loc>https://zerolib.org/books/desinstaller-gnulinux-et-ne-garder-que-windows</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-percolation</loc>
+    <loc>https://zerolib.org/books/la-percolation</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-modeliser-en-3d-avec-autodesk-maya</loc>
+    <loc>https://zerolib.org/books/apprenez-a-modeliser-en-3d-avec-autodesk-maya</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-des-interpolations-avec-flash</loc>
+    <loc>https://zerolib.org/books/creer-des-interpolations-avec-flash</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/heberger-des-depots-git-avec-gitosis</loc>
+    <loc>https://zerolib.org/books/heberger-des-depots-git-avec-gitosis</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/ecrivez-votre-site-web-en-c-avec-la-cgi</loc>
+    <loc>https://zerolib.org/books/ecrivez-votre-site-web-en-c-avec-la-cgi</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-safe-mode-sous-php</loc>
+    <loc>https://zerolib.org/books/le-safe-mode-sous-php</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-virtualisation-sous-linux</loc>
+    <loc>https://zerolib.org/books/la-virtualisation-sous-linux</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-programmation-systeme-en-c-sous-unix</loc>
+    <loc>https://zerolib.org/books/la-programmation-systeme-en-c-sous-unix</loc>
     <lastmod>2026-07-29T09:53:19+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-a-c-2011-c0x</loc>
+    <loc>https://zerolib.org/books/introduction-a-c-2011-c0x</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/gerez-vos-codes-source-avec-git</loc>
+    <loc>https://zerolib.org/books/gerez-vos-codes-source-avec-git</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/conteneurs-exotiques-boost</loc>
+    <loc>https://zerolib.org/books/conteneurs-exotiques-boost</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/bases-de-traitement-du-signal</loc>
+    <loc>https://zerolib.org/books/bases-de-traitement-du-signal</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/audacity-prise-en-main</loc>
+    <loc>https://zerolib.org/books/audacity-prise-en-main</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-avec-ada</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-avec-ada</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/presentation-de-kde-les-kio-slaves</loc>
+    <loc>https://zerolib.org/books/presentation-de-kde-les-kio-slaves</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/adium</loc>
+    <loc>https://zerolib.org/books/adium</loc>
     <lastmod>2026-07-29T09:53:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creez-une-interface-avec-gtk</loc>
+    <loc>https://zerolib.org/books/creez-une-interface-avec-gtk</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-moteur-de-recherche-avec-sphinx-et-php</loc>
+    <loc>https://zerolib.org/books/creer-un-moteur-de-recherche-avec-sphinx-et-php</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/du-qt-en-java-avec-qt-jambi</loc>
+    <loc>https://zerolib.org/books/du-qt-en-java-avec-qt-jambi</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-une-installation</loc>
+    <loc>https://zerolib.org/books/creer-une-installation</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/compilez-sous-gnulinux</loc>
+    <loc>https://zerolib.org/books/compilez-sous-gnulinux</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creation-de-paquets-avec-archlinux</loc>
+    <loc>https://zerolib.org/books/creation-de-paquets-avec-archlinux</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/page-derreur-perso</loc>
+    <loc>https://zerolib.org/books/page-derreur-perso</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/introduction-aux-operateurs-de-bits</loc>
+    <loc>https://zerolib.org/books/introduction-aux-operateurs-de-bits</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/profilage-geographique</loc>
+    <loc>https://zerolib.org/books/profilage-geographique</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/un-site-web-dynamique-avec-jquery</loc>
+    <loc>https://zerolib.org/books/un-site-web-dynamique-avec-jquery</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/debuter-dans-linformatique-embarquee-avec-teensy</loc>
+    <loc>https://zerolib.org/books/debuter-dans-linformatique-embarquee-avec-teensy</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/prenez-en-main-bootstrap</loc>
+    <loc>https://zerolib.org/books/prenez-en-main-bootstrap</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-physique-chimie-en-seconde</loc>
+    <loc>https://zerolib.org/books/la-physique-chimie-en-seconde</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-threads-en-net</loc>
+    <loc>https://zerolib.org/books/les-threads-en-net</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-serveur-ftp-sous-windows</loc>
+    <loc>https://zerolib.org/books/creer-un-serveur-ftp-sous-windows</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-premiers-algorithmes-de-chiffrement</loc>
+    <loc>https://zerolib.org/books/les-premiers-algorithmes-de-chiffrement</loc>
     <lastmod>2026-07-29T09:53:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/piloter-canvas-avec-kineticjs</loc>
+    <loc>https://zerolib.org/books/piloter-canvas-avec-kineticjs</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/des-techniques-modernes-pour-lagencement-en-colonnes</loc>
+    <loc>https://zerolib.org/books/des-techniques-modernes-pour-lagencement-en-colonnes</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/installer-configurer-et-utiliser-xampp-sous-ubuntu</loc>
+    <loc>https://zerolib.org/books/installer-configurer-et-utiliser-xampp-sous-ubuntu</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-systeme-de-newsletter</loc>
+    <loc>https://zerolib.org/books/creer-un-systeme-de-newsletter</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/programmez-avec-le-langage-c</loc>
+    <loc>https://zerolib.org/books/programmez-avec-le-langage-c</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/creer-un-avatar-qui-change</loc>
+    <loc>https://zerolib.org/books/creer-un-avatar-qui-change</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/le-developpement-de-jeux-video-avec-xna</loc>
+    <loc>https://zerolib.org/books/le-developpement-de-jeux-video-avec-xna</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/qt-bien-utiliser-qtxml</loc>
+    <loc>https://zerolib.org/books/qt-bien-utiliser-qtxml</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-commande-sed</loc>
+    <loc>https://zerolib.org/books/la-commande-sed</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/compteur-de-telechargements</loc>
+    <loc>https://zerolib.org/books/compteur-de-telechargements</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/3d-temps-reel-avec-irrlicht</loc>
+    <loc>https://zerolib.org/books/3d-temps-reel-avec-irrlicht</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faire-des-tableaux-sous-ooo-writer</loc>
+    <loc>https://zerolib.org/books/faire-des-tableaux-sous-ooo-writer</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/laxe-parser</loc>
+    <loc>https://zerolib.org/books/laxe-parser</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/configurer-hammer-pour-steam</loc>
+    <loc>https://zerolib.org/books/configurer-hammer-pour-steam</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/ajouter-des-utilisateurs-en-ligne-a-typsoft-ftp-serveur</loc>
+    <loc>https://zerolib.org/books/ajouter-des-utilisateurs-en-ligne-a-typsoft-ftp-serveur</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/installer-xubuntu-sur-un-vieux-pc-grace-a-lalternate-cd</loc>
+    <loc>https://zerolib.org/books/installer-xubuntu-sur-un-vieux-pc-grace-a-lalternate-cd</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/la-const-correctness-expliquee-aux-zeros</loc>
+    <loc>https://zerolib.org/books/la-const-correctness-expliquee-aux-zeros</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-reseaux-de-zero</loc>
+    <loc>https://zerolib.org/books/les-reseaux-de-zero</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/parser-un-format-simple-en-haskell-avec-parsec</loc>
+    <loc>https://zerolib.org/books/parser-un-format-simple-en-haskell-avec-parsec</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/les-differents-types-dapplications-pouvant-etre-developpees-avec-le-c</loc>
+    <loc>https://zerolib.org/books/les-differents-types-dapplications-pouvant-etre-developpees-avec-le-c</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/apprenez-a-programmer-en-c-sur-net</loc>
+    <loc>https://zerolib.org/books/apprenez-a-programmer-en-c-sur-net</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/c-les-pointeurs-sur-fonctions</loc>
+    <loc>https://zerolib.org/books/c-les-pointeurs-sur-fonctions</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/lalgorithme-min-max</loc>
+    <loc>https://zerolib.org/books/lalgorithme-min-max</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/faire-des-animations-avec-sdlp-anim</loc>
+    <loc>https://zerolib.org/books/faire-des-animations-avec-sdlp-anim</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost:8000/books/calculer-une-plage-dadresses-avec-la-methode-magique</loc>
+    <loc>https://zerolib.org/books/calculer-une-plage-dadresses-avec-la-methode-magique</loc>
     <lastmod>2026-07-29T09:53:24+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
