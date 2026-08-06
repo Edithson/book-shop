@@ -1,7 +1,8 @@
   <!-- FOOTER -->
   <footer class="bg-ink text-cream py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between gap-8 mb-10">
+      {{-- tout le texte de cette div en gras --}}
+      <div class="flex flex-col md:flex-row justify-between gap-8 mb-10 font-bold">
         <div>
           <div class="font-serif text-xl font-bold mb-3">Zéro<span class="text-amber">lib</span></div>
           <p class="text-cream/40 text-sm max-w-xs">Une archive libre dédiée aux anciens livres du Site du Zéro, pour préserver et partager la connaissance.</p>
@@ -22,9 +23,9 @@
           </div>
         </div>
       </div>
-      <div class="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <p class="text-cream/30 text-xs">© 2026 Zérolib — Tous droits réservés.</p>
-        <p class="text-cream/30 text-xs">Fait par <a href="https://moafogaus.72.62.16.16.nip.io/" class="hover:text-amber transition-colors underline font-bold">FONHOUO GAUS</a> pour la communauté</p>
+      <div class="border-t border-cream/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 font-bold">
+        <p class="text-cream/50 text-xs">© 2026 Zérolib — Tous droits réservés.</p>
+        <p class="text-cream/50 text-xs">Fait par <a href="https://moafogaus.abrdns.com/" class="hover:text-amber transition-colors underline font-bold">FONHOUO GAUS</a> pour la communauté</p>
       </div>
     </div>
   </footer>
