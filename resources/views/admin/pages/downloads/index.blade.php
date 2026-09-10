@@ -16,6 +16,15 @@
                 <p class="text-sm text-ink/50 mt-1">Suivez l'activité et la popularité de vos livres.</p>
             </div>
         </div>
+
+        {{-- Bouton d'exportation --}}
+        <a href="{{ route('admin.downloads.export', array_filter(['start_date' => $startDate, 'end_date' => $endDate])) }}"
+           class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-sage text-cream font-semibold rounded-lg hover:bg-sage/90 transition-colors text-sm shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Exporter en CSV / Excel
+        </a>
     </div>
 
     {{-- FILTRES ET TOP 5 (Grille) --}}
@@ -89,6 +98,13 @@
     <div class="stat-card overflow-hidden bg-white border border-amber/10">
         <div class="px-6 py-4 border-b border-amber/10 bg-parchment/30 flex justify-between items-center">
             <h3 class="font-medium text-ink">Historique détaillé ({{ $downloads->total() }})</h3>
+            <a href="{{ route('admin.downloads.export', array_filter(['start_date' => $startDate, 'end_date' => $endDate])) }}"
+               class="inline-flex items-center gap-1.5 text-xs font-semibold text-sage hover:text-amber transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Exporter (CSV / Excel)
+            </a>
         </div>
 
         <div class="overflow-x-auto">

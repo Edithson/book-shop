@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Gestion des téléchargements
         Route::get('/admin/downloads', [DownloadController::class, 'index'])->name('admin.downloads.index');
+        Route::get('/admin/downloads/export', [DownloadController::class, 'export'])->name('admin.downloads.export');
 
         // ==========================================
         // ROUTES SUPER ADMIN (Type 3 Uniquement)

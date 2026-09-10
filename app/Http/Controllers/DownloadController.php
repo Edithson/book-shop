@@ -85,4 +85,79 @@ class DownloadController extends Controller
             'pageTitle'    => 'Statistiques des téléchargements',
         ]);
     }
+
+    /**
+     * Export des données de téléchargement au format CSV/Excel
+     * Prends uniquement en compte les filtres de dates appliqués (ignore la pagination).
+     * Si les filtres sont vides, exporte l'intégralité de l'historique depuis le début.
+     */
+    public function export(Request $request)
+    {
+        $startDate = $request->input('start_date');
+        $endDate   = $request->input('end_date');
+
+        $query = Download::with(['book.category', 'user'])->latest();
+
+        if (!empty($startDate)) {
+            $query->whereDate('created_at', '>=', $startDate);
+        }
+        if (!empty($endDate)) {
+            $query->whereDate('created_at', '<=', $endDate);
+        }
+
+        $fileName = 'telechargements_zerolib_' . now()->format('Y-m-d_H-i') . '.csv';
+
+        $headers = [
+            "Content-Type"        => "text/csv; charset=UTF-8",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        ];
+
+        $callback = function () use ($query) {
+            $file = fopen('php://output', 'w');
+
+            // BOM pour la prise en charge native des caractères UTF-8 sous Microsoft Excel
+            fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
+
+            // En-têtes CSV (Délimiteur point-virgule pour compatibilité Excel FR)
+            fputcsv($file, [
+                'ID',
+                'Date & Heure',
+                'Livre',
+                'Auteur',
+                'Catégorie',
+                'Tarif',
+                'Utilisateur / Visiteur',
+                'Adresse IP',
+                'Navigateur (User Agent)'
+            ], ';', '"', '\\');
+
+            // Parcourir l'intégralité des résultats par paquets de 500 sans bloquer la mémoire
+            $query->lazy(500)->each(function ($download) use ($file) {
+                $bookTitle  = $download->book ? $download->book->title : 'Livre supprimé';
+                $bookAuthor = $download->book ? ($download->book->author ?? 'Non renseigné') : '—';
+                $category   = $download->book && $download->book->category ? $download->book->category->name : '—';
+                $tariff     = $download->book ? ($download->book->is_free ? 'Gratuit' : 'Premium (' . $download->book->formatted_price . ')') : '—';
+                $userLabel  = $download->user ? $download->user->name . ' (' . $download->user->email . ')' : 'Visiteur non connecté';
+
+                fputcsv($file, [
+                    $download->id,
+                    $download->created_at ? $download->created_at->format('d/m/Y H:i:s') : '—',
+                    $bookTitle,
+                    $bookAuthor,
+                    $category,
+                    $tariff,
+                    $userLabel,
+                    $download->ip_address ?? 'Inconnue',
+                    $download->user_agent ?? 'Inconnu'
+                ], ';', '"', '\\');
+            });
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 }

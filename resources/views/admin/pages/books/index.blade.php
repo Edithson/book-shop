@@ -18,7 +18,7 @@
                 type="text"
                 name="search"
                 value="{{ request('search') }}"
-                placeholder="    Filtrer les livres..."
+                placeholder="Rechercher par titre, auteur, description..."
                 class="field-input pl-9"
             />
         </div>
@@ -32,6 +32,13 @@
                     {{ $cat->name }}
                 </option>
             @endforeach
+        </select>
+
+        {{-- Filtre publication --}}
+        <select name="published" class="field-input sm:w-44" onchange="this.form.submit()">
+            <option value="">Tous les statuts</option>
+            <option value="1" {{ request('published') === '1' ? 'selected' : '' }}>Publiés</option>
+            <option value="0" {{ request('published') === '0' ? 'selected' : '' }}>Non publiés</option>
         </select>
 
         {{-- Bouton rechercher --}}
@@ -64,25 +71,26 @@
                         <th class="text-left">Livre</th>
                         <th class="text-left hidden md:table-cell">Catégorie</th>
                         <th class="text-left hidden sm:table-cell">Description</th>
-                        <th class="text-left hidden lg:table-cell">Statut</th>
+                        <th class="text-left hidden lg:table-cell">Publication</th>
+                        <th class="text-left hidden xl:table-cell">Tarif</th>
                         <th class="text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($books as $book)
                         <tr>
-                            {{-- Titre + icône --}}
+                            {{-- Titre + icône + auteur --}}
                             <td>
                                 <div class="flex items-center gap-3">
                                     <div class="w-9 h-9 rounded-lg flex items-center justify-center text-lg flex-shrink-0 bg-parchment">
                                         {{ $book->icon ?? '📖' }}
                                     </div>
                                     <div class="min-w-0">
-                                        <div class="font-medium text-sm truncate max-w-[160px]">
+                                        <div class="font-medium text-sm truncate max-w-[160px] sm:max-w-[220px]">
                                             {{ $book->title }}
                                         </div>
                                         <div class="text-xs text-ink/40 truncate">
-                                            {{ $book->author }}
+                                            {{ $book->author ?? 'Auteur non renseigné' }}
                                         </div>
                                     </div>
                                 </div>
@@ -102,12 +110,27 @@
                                 </span>
                             </td>
 
-                            {{-- Statut --}}
+                            {{-- Statut de publication --}}
                             <td class="hidden lg:table-cell">
+                                @if($book->is_published)
+                                    <span class="badge badge-free inline-flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+                                        Publié
+                                    </span>
+                                @else
+                                    <span class="badge badge-pending inline-flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-rust"></span>
+                                        Non publié
+                                    </span>
+                                @endif
+                            </td>
+
+                            {{-- Tarif --}}
+                            <td class="hidden xl:table-cell">
                                 @if($book->is_free)
                                     <span class="badge badge-free">Gratuit</span>
                                 @else
-                                    <span class="badge badge-premium">Premium</span>
+                                    <span class="badge badge-premium">{{ $book->formatted_price }}</span>
                                 @endif
                             </td>
 
@@ -146,12 +169,12 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center py-12">
+                            <td colspan="6" class="text-center py-12">
                                 <div class="text-3xl mb-2">📭</div>
                                 <p class="text-ink/40 text-sm">Aucun livre trouvé.</p>
-                                @if(request('search') || request('category'))
+                                @if(request('search') || request('category') || (request()->has('published') && request('published') !== ''))
                                     <a href="{{ route('admin.books.index') }}"
-                                       class="text-amber text-xs hover:underline mt-1 inline-block">
+                                       class="text-amber text-xs hover:underline mt-2 inline-block">
                                         Effacer les filtres
                                     </a>
                                 @endif
@@ -164,53 +187,12 @@
 
         {{-- PAGINATION --}}
         @if($books->hasPages())
-            <div class="px-5 py-4 border-t border-amber/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <span class="text-xs text-ink/40">
-                    {{ $books->firstItem() }}–{{ $books->lastItem() }} sur {{ $books->total() }} livre(s)
-                </span>
-                <div class="flex gap-1 items-center">
-
-                    {{-- Précédent --}}
-                    @if($books->onFirstPage())
-                        <span class="px-3 py-1 text-xs rounded border border-amber/10 text-ink/25 cursor-not-allowed">
-                            ‹ Préc.
-                        </span>
-                    @else
-                        <a href="{{ $books->previousPageUrl() }}"
-                           class="px-3 py-1 text-xs rounded border border-amber/20 hover:bg-parchment transition-colors">
-                            ‹ Préc.
-                        </a>
-                    @endif
-
-                    {{-- Numéros de pages --}}
-                    @foreach($books->getUrlRange(1, $books->lastPage()) as $page => $url)
-                        @if($page == $books->currentPage())
-                            <span class="px-3 py-1 text-xs rounded bg-ink text-cream">{{ $page }}</span>
-                        @else
-                            <a href="{{ $url }}"
-                               class="px-3 py-1 text-xs rounded border border-amber/20 hover:bg-parchment transition-colors">
-                                {{ $page }}
-                            </a>
-                        @endif
-                    @endforeach
-
-                    {{-- Suivant --}}
-                    @if($books->hasMorePages())
-                        <a href="{{ $books->nextPageUrl() }}"
-                           class="px-3 py-1 text-xs rounded border border-amber/20 hover:bg-parchment transition-colors">
-                            Suiv. ›
-                        </a>
-                    @else
-                        <span class="px-3 py-1 text-xs rounded border border-amber/10 text-ink/25 cursor-not-allowed">
-                            Suiv. ›
-                        </span>
-                    @endif
-
-                </div>
+            <div class="px-6 py-4 border-t border-amber/10">
+                {{ $books->links() }}
             </div>
         @else
-            <div class="px-5 py-4 border-t border-amber/10">
-                <span class="text-xs text-ink/40">{{ $books->total() }} livre(s)</span>
+            <div class="px-6 py-4 border-t border-amber/10 flex justify-between items-center">
+                <span class="text-xs text-ink/40">Total : {{ $books->total() }} livre(s)</span>
             </div>
         @endif
 
