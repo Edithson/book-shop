@@ -15,13 +15,24 @@ class BookController extends Controller
     public function index_admin(Request $request)
     {
         $books = Book::with('category')
-            ->when($request->search, fn($q) => $q->where('title', 'like', "%{$request->search}%"))
+            ->when($request->search, function ($query, $search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('title', 'like', "%{$search}%")
+                      ->orWhere('author', 'like', "%{$search}%")
+                      ->orWhere('description', 'like', "%{$search}%");
+                });
+            })
             ->when($request->category, fn($q) => $q->where('category_id', $request->category))
-            ->paginate(15);
+            ->when($request->has('published') && $request->published !== '' && $request->published !== null, function ($query) use ($request) {
+                $query->where('is_published', $request->published == '1');
+            })
+            ->latest()
+            ->paginate(15)
+            ->withQueryString();
 
         return view('admin.pages.books.index', [
             'books'      => $books,
-            'categories' => Category::all(),
+            'categories' => Category::orderBy('name')->get(),
             'pageTitle'  => 'Gestion des livres',
             'totalBooks' => Book::count(),
         ]);
@@ -44,6 +55,7 @@ class BookController extends Controller
         $validated = $request->validate([
             'title'        => ['required', 'string', 'max:255'],
             'author'       => ['nullable', 'string', 'max:255'],
+            'licence'      => ['nullable', 'string', 'max:255'],
             'description'  => ['nullable', 'string'],
             'price'        => ['nullable', 'integer', 'min:0'],
             'category_id'  => ['nullable', 'exists:categories,id'],
@@ -69,6 +81,7 @@ class BookController extends Controller
         Book::create([
             'title'        => $validated['title'],
             'author'       => $validated['author'] ?? null,
+            'licence'      => $validated['licence'] ?? null,
             'description'  => $validated['description'] ?? null,
             'price'        => $validated['price'] ?? 0,
             'category_id'  => $validated['category_id'] ?? null,
@@ -102,6 +115,7 @@ class BookController extends Controller
         $validated = $request->validate([
             'title'        => ['required', 'string', 'max:255'],
             'author'       => ['nullable', 'string', 'max:255'],
+            'licence'      => ['nullable', 'string', 'max:255'],
             'description'  => ['nullable', 'string'],
             'price'        => ['nullable', 'integer', 'min:0'],
             'category_id'  => ['nullable', 'exists:categories,id'],
@@ -133,6 +147,7 @@ class BookController extends Controller
             $book->update([
                 'title'        => $validated['title'],
                 'author'       => $validated['author'] ?? null,
+                'licence'      => $validated['licence'] ?? null,
                 'description'  => $validated['description'] ?? null,
                 'price'        => $validated['price'] ?? 0,
                 'category_id'  => $validated['category_id'] ?? null,

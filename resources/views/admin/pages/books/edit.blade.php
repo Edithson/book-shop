@@ -79,9 +79,23 @@
                     name="author"
                     value="{{ old('author', $book->author) }}"
                     class="field-input @error('author') border-rust @enderror"
-                    nullable
                 />
                 @error('author')
+                    <p class="text-rust text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div>
+                <label for="licence" class="field-label">Licence</label>
+                <input
+                    type="text"
+                    id="licence"
+                    name="licence"
+                    value="{{ old('licence', $book->licence) }}"
+                    placeholder="ex : CC BY-SA 4.0, Domaine Public..."
+                    class="field-input @error('licence') border-rust @enderror"
+                />
+                @error('licence')
                     <p class="text-rust text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>

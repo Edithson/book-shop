@@ -15,6 +15,7 @@ class Book extends Model
         'slug',
         'description',
         'author',
+        'licence',
         'price',
         'cover_path',
         'file_path',
